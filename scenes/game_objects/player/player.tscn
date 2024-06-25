@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4kea8118483s"]
+
+[ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
+[ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
+[ext_resource type="Texture2D" uid="uid://dwja6muvrtgs1" path="res://scenes/game_objects/player/tile_0000.png" id="3_wyi2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kawqb"]
+size = Vector2(12, 23)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 0
+platform_floor_layers = 4294901761
+script = ExtResource("1_o0x4b")
+max_speed = 125.0
+jump_speed = 335.0
+gravity = 960.0
+
+[node name="Velocity2D" parent="." instance=ExtResource("1_01q1c")]
+max_speed = 205.0
+acceleration = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_wyi2w")
+offset = Vector2(0, -12)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_kawqb")
