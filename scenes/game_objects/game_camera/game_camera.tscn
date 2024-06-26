@@ -5,3 +5,4 @@
 [node name="GameCamera" type="Camera2D"]
 ignore_rotation = false
 script = ExtResource("1_xlirn")
+background_color = Color(0.752941, 0.835294, 0.980392, 1)
