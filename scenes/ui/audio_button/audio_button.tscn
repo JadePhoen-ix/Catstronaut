@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwnwju7rvg8qi"]
+
+[ext_resource type="Script" path="res://scenes/ui/audio_button/audio_button.gd" id="1_5w7ul"]
+[ext_resource type="PackedScene" uid="uid://7y6fon7x0jcm" path="res://scenes/components/audio/random_audio/random_audio_component.tscn" id="2_2ptnk"]
+
+[node name="AudioButton" type="Button"]
+offset_right = 6.0
+offset_bottom = 6.0
+text = "Audio Button"
+script = ExtResource("1_5w7ul")
+
+[node name="RandomAudioComponent" parent="." instance=ExtResource("2_2ptnk")]
+process_mode = 3
+bus = &"Master"

@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0kkup4ukikgg"]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_eg34n"]
+[ext_resource type="PackedScene" uid="uid://bxhx1333hebx2" path="res://scenes/ui/screen_darken/screen_darken_component.tscn" id="2_w7v60"]
+[ext_resource type="PackedScene" uid="uid://dwnwju7rvg8qi" path="res://scenes/ui/audio_button/audio_button.tscn" id="3_1vf5j"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_eg34n")
+
+[node name="ScreenDarken" parent="." instance=ExtResource("2_w7v60")]
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "GAME PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ResumeButton" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_1vf5j")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="OptionsButton" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_1vf5j")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="MainMenuButton" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_1vf5j")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"
