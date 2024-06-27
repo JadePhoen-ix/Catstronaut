@@ -79,7 +79,7 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 	elif movement_vector.x != 0.0:
 		animation_player.play("run")
 	else:
-		animation_player.play("RESET")
+		animation_player.play("idle")
 
 
 
