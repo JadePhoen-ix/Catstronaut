@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvbdsyxa7x4yt"]
+[gd_scene load_steps=5 format=3 uid="uid://bvbdsyxa7x4yt"]
 
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="1_flrh3"]
 [ext_resource type="TileSet" uid="uid://qw3ivwvnkf82" path="res://resources/tile_sets/tile_set.tres" id="1_q5vme"]
+[ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="1_tllb6"]
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="3_mcat1"]
 
 [node name="Main" type="Node"]
+
+[node name="SpaceBackdrop" parent="." instance=ExtResource("1_tllb6")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_q5vme")

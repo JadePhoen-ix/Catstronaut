@@ -13,9 +13,9 @@ var is_flipped: bool:
 var is_falling: bool:
 	get:
 		if is_flipped:
-			return velocity_2d.velocity.y > 0.0
-		else:
 			return velocity_2d.velocity.y < 0.0
+		else:
+			return velocity_2d.velocity.y > 0.0
 
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
 @onready var land_animation_player := $LandAnimationPlayer as AnimationPlayer
@@ -72,7 +72,7 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 	if animation_player.current_animation == "jump" and animation_player.is_playing():
 		return
 	
-	if is_falling and not is_on_floor():
+	if is_falling:
 		animation_player.play("fall")
 	elif movement_vector.y == up_direction.y:
 		animation_player.play("jump")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkdmenm1ry2hm"]
+
+[ext_resource type="Texture2D" uid="uid://cp6eoptfg7343" path="res://scenes/environment/space_backdrop/backdrop 1.png" id="1_fh0lb"]
+[ext_resource type="Texture2D" uid="uid://bs2jflpy25yyh" path="res://scenes/environment/space_backdrop/backdrop 2.png" id="2_52beo"]
+[ext_resource type="Texture2D" uid="uid://uunlk5benfq8" path="res://scenes/environment/space_backdrop/backdrop 3.png" id="3_8e34c"]
+[ext_resource type="Texture2D" uid="uid://belrm7rfrayjw" path="res://scenes/environment/space_backdrop/backdrop 4.png" id="4_uakh0"]
+[ext_resource type="Texture2D" uid="uid://c5nnq7dcuhmlr" path="res://scenes/environment/space_backdrop/backdrop 5.png" id="5_v7vjv"]
+
+[node name="SpaceBackdrop" type="ParallaxBackground"]
+
+[node name="Layer1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer1"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_fh0lb")
+centered = false
+
+[node name="Layer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer2"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_52beo")
+centered = false
+
+[node name="Layer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer3"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_8e34c")
+centered = false
+
+[node name="Layer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer4"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_uakh0")
+centered = false
+
+[node name="Stars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.02, 0.01)
+motion_mirroring = Vector2(512, 288)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stars"]
+scale = Vector2(2, 2)
+texture = ExtResource("5_v7vjv")
+centered = false
