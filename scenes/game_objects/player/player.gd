@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var adjusted_gravity := gravity
 var jump_cancel_multiplier := 3.0
-var was_grounded_last_frame := is_on_floor()
+var was_grounded_last_frame := true
 
 var is_flipped: bool:
 	get: return !up_direction.y == -1
@@ -23,6 +23,7 @@ var is_falling: bool:
 @onready var land_animation_player := $LandAnimationPlayer as AnimationPlayer
 @onready var velocity_2d := $Velocity2D as Velocity2D
 @onready var visuals := $Pivot as Node2D
+@onready var flip_random_audio_2d := $FlipRandomAudio2D as RandomAudio2D
 
 
 func _process(delta: float) -> void:
@@ -53,6 +54,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		($Pivot as Node2D).scale.y *= -1
 		adjusted_gravity *= -1
 		up_direction *= -1
+		
+		flip_random_audio_2d.play_at_index(is_flipped)
 		animation_player.play("flip")
 
 
@@ -81,13 +84,10 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 		animation_player.play("fall")
 	elif movement_vector.y == up_direction.y:
 		animation_player.play("jump")
-	elif movement_vector.x != 0.0:
+	elif movement_vector.x != 0.0 and is_on_floor():
 		animation_player.play("run")
 	else:
 		animation_player.play("idle")
-
-
-
 
 
 

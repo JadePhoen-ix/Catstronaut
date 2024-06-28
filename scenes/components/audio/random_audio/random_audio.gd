@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-class_name RandomAudioComponent
+class_name RandomAudio
 
 
 @export var streams: Array[AudioStream]

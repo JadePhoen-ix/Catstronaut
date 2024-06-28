@@ -1,9 +1,26 @@
-[gd_scene load_steps=29 format=3 uid="uid://c4kea8118483s"]
+[gd_scene load_steps=49 format=3 uid="uid://c4kea8118483s"]
 
 [ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
 [ext_resource type="Texture2D" uid="uid://cygcdnnb063c6" path="res://scenes/game_objects/player/player.png" id="3_53q1s"]
 [ext_resource type="PackedScene" uid="uid://bw0h3mk6so7q5" path="res://scenes/components/physics/hitbox/hitbox_component.tscn" id="4_unkui"]
+[ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="5_exhn1"]
+[ext_resource type="AudioStream" uid="uid://bxnvjeyr1cwq1" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_1.wav" id="6_bn4yy"]
+[ext_resource type="AudioStream" uid="uid://coov20uf6a4ff" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_2.wav" id="7_4232y"]
+[ext_resource type="AudioStream" uid="uid://cll0w4nc0lfsy" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_3.wav" id="8_yhar8"]
+[ext_resource type="AudioStream" uid="uid://dy5ji5m4nrqv0" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_4.wav" id="9_fljuy"]
+[ext_resource type="AudioStream" uid="uid://bgd885h55ip3a" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_5.wav" id="10_o8t7k"]
+[ext_resource type="AudioStream" uid="uid://cs5th8k3iwpu8" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_6.wav" id="11_5pu46"]
+[ext_resource type="AudioStream" uid="uid://xuyr66lkd3ww" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_7.wav" id="12_kfxye"]
+[ext_resource type="AudioStream" uid="uid://b3yfw1hhonp" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_8.wav" id="13_6uok7"]
+[ext_resource type="AudioStream" uid="uid://nfrta2d5d6ck" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_9.wav" id="14_cgkxg"]
+[ext_resource type="AudioStream" uid="uid://cp62lfib5y13h" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_10.wav" id="15_8qofs"]
+[ext_resource type="AudioStream" uid="uid://pqsete0yjkwa" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_11.wav" id="16_4tvn8"]
+[ext_resource type="AudioStream" uid="uid://7ylceshtp4sf" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_12.wav" id="17_o1lcc"]
+[ext_resource type="AudioStream" uid="uid://b5qyg4i6k2kka" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_13.wav" id="18_16tvk"]
+[ext_resource type="AudioStream" uid="uid://ctficrrh1xglp" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_14.wav" id="19_q6kmx"]
+[ext_resource type="AudioStream" uid="uid://r6slcrpon8fn" path="res://assets/audio/gameplay/Reverse_Gravity_Inverted-Normal.wav" id="20_6mddm"]
+[ext_resource type="AudioStream" uid="uid://dhnwkwogryth2" path="res://assets/audio/gameplay/Reverse_Gravity_Normal-Inverted.wav" id="21_1fg7h"]
 
 [sub_resource type="Animation" id="Animation_5bt03"]
 length = 0.001
@@ -346,6 +363,23 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WalkRandomAudio2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_random"
+}, {
+"args": [],
+"method": &"play_random"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqmr2"]
 _data = {
@@ -412,6 +446,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 0.7), Vector2(1, 1)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkRandomAudio2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-0.2],
+"method": &"play_random"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thwkp"]
 _data = {
@@ -421,6 +469,18 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kawqb"]
 size = Vector2(22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0b8p"]
+atlas = ExtResource("3_53q1s")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5udv"]
+atlas = ExtResource("3_53q1s")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jam6r"]
+atlas = ExtResource("3_53q1s")
+region = Rect2(64, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ko3r"]
 atlas = ExtResource("3_53q1s")
@@ -468,6 +528,20 @@ region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jayfc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0b8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5udv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jam6r")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ko3r")
@@ -569,3 +643,9 @@ offset = Vector2(0, -16)
 visible = false
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_o6xft")
+
+[node name="WalkRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
+streams = Array[AudioStream]([ExtResource("6_bn4yy"), ExtResource("7_4232y"), ExtResource("8_yhar8"), ExtResource("9_fljuy"), ExtResource("10_o8t7k"), ExtResource("11_5pu46"), ExtResource("12_kfxye"), ExtResource("13_6uok7"), ExtResource("14_cgkxg"), ExtResource("15_8qofs"), ExtResource("16_4tvn8"), ExtResource("17_o1lcc"), ExtResource("18_16tvk"), ExtResource("19_q6kmx")])
+
+[node name="FlipRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
+streams = Array[AudioStream]([ExtResource("20_6mddm"), ExtResource("21_1fg7h")])
