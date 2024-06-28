@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://r6slcrpon8fn"
-path="res://.godot/imported/Reverse_Gravity_Inverted-Normal.wav-729b7fa9bc146b7438e24ebf15939837.sample"
+path="res://.godot/imported/Reverse_Gravity_Inverted-Normal.wav-96378e306a394e6076b102df40e02a47.sample"
 
 [deps]
 
-source_file="res://assets/audio/gameplay/Reverse_Gravity_Inverted-Normal.wav"
-dest_files=["res://.godot/imported/Reverse_Gravity_Inverted-Normal.wav-729b7fa9bc146b7438e24ebf15939837.sample"]
+source_file="res://assets/audio/Gameplay/Reverse_Gravity_Inverted-Normal.wav"
+dest_files=["res://.godot/imported/Reverse_Gravity_Inverted-Normal.wav-96378e306a394e6076b102df40e02a47.sample"]
 
 [params]
 

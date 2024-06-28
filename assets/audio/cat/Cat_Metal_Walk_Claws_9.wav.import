@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://nfrta2d5d6ck"
-path="res://.godot/imported/Cat_Metal_Walk_Claws_9.wav-38fdf123ccbe83acb541b0690232f396.sample"
+path="res://.godot/imported/Cat_Metal_Walk_Claws_9.wav-4f09606597b1f85a58d9b3c6ba6b5cd2.sample"
 
 [deps]
 
-source_file="res://assets/audio/cat/Cat_Metal_Walk_Claws_9.wav"
-dest_files=["res://.godot/imported/Cat_Metal_Walk_Claws_9.wav-38fdf123ccbe83acb541b0690232f396.sample"]
+source_file="res://assets/audio/Cat/Cat_Metal_Walk_Claws_9.wav"
+dest_files=["res://.godot/imported/Cat_Metal_Walk_Claws_9.wav-4f09606597b1f85a58d9b3c6ba6b5cd2.sample"]
 
 [params]
 
