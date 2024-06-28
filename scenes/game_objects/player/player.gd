@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var adjusted_gravity := gravity
 var jump_cancel_multiplier := 3.0
+var was_grounded_last_frame := is_on_floor()
 
 var is_flipped: bool:
 	get: return !up_direction.y == -1
@@ -18,6 +19,7 @@ var is_falling: bool:
 			return velocity_2d.velocity.y > 0.0
 
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
+@onready var coyote_timer := $CoyoteTimer as Timer
 @onready var land_animation_player := $LandAnimationPlayer as AnimationPlayer
 @onready var velocity_2d := $Velocity2D as Velocity2D
 @onready var visuals := $Pivot as Node2D
@@ -25,11 +27,11 @@ var is_falling: bool:
 
 func _process(delta: float) -> void:
 	var movement_vector := get_movement_vector()
-	var was_grounded_last_frame := is_on_floor()
+	was_grounded_last_frame = is_on_floor()
 	
 	velocity_2d.accelerate_in_direction(movement_vector)
 	
-	if movement_vector.y < 0.0 and is_on_floor():
+	if movement_vector.y < 0.0 and (is_on_floor() or not coyote_timer.is_stopped()):
 		var jump_direction := -1 if is_flipped else 1
 		velocity_2d.velocity.y = (movement_vector.y * jump_speed) * jump_direction
 	
@@ -40,9 +42,8 @@ func _process(delta: float) -> void:
 	
 	velocity_2d.move(self)
 	
-	var move_sign := signf(movement_vector.x)
-	if move_sign != 0:
-		visuals.scale = Vector2(move_sign, visuals.scale.y)
+	if was_grounded_last_frame and not is_on_floor():
+		coyote_timer.start()
 	
 	update_animation(movement_vector, (not was_grounded_last_frame and is_on_floor()))
 
@@ -63,6 +64,10 @@ func get_movement_vector() -> Vector2:
 
 
 func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
+	var move_sign := signf(movement_vector.x)
+	if move_sign != 0:
+		visuals.scale = Vector2(move_sign, visuals.scale.y)
+	
 	if just_landed:
 		land_animation_player.play("land")
 	
