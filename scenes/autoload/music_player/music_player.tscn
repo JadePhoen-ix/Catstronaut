@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbc8xpv2elw53"]
+
+[ext_resource type="Script" path="res://scenes/autoload/music_player/music_player.gd" id="2_ey5tt"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_ey5tt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true

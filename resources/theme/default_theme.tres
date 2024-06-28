@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bbq08jmx55cqa"]
+
+[ext_resource type="FontFile" uid="uid://gxk4jobyby13" path="res://resources/fonts/Kenney Blocks.ttf" id="1_7xep3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hikx0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xio42"]
+bg_color = Color(0.658824, 0.623529, 0.8, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32549, 0.262745, 0.498039, 1)
+anti_aliasing = false
+
+[resource]
+default_font = ExtResource("1_7xep3")
+default_font_size = 16
+Button/colors/font_color = Color(1, 0.85098, 0.909804, 1)
+Button/colors/font_focus_color = Color(1, 0.85098, 0.909804, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0.658824, 0.623529, 0.8, 1)
+Button/colors/font_outline_color = Color(0.32549, 0.262745, 0.498039, 1)
+Button/colors/font_pressed_color = Color(0.658824, 0.623529, 0.8, 1)
+Button/constants/outline_size = 4
+Button/styles/focus = SubResource("StyleBoxEmpty_hikx0")
+Label/colors/font_color = Color(1, 0.85098, 0.909804, 1)
+Label/colors/font_outline_color = Color(0.32549, 0.262745, 0.498039, 1)
+Label/constants/outline_size = 4
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_xio42")
