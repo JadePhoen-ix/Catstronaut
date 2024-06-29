@@ -1,20 +1,20 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvbdsyxa7x4yt"]
 
-[ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_2va12"]
-[ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_uschr"]
-[ext_resource type="TileSet" uid="uid://dlc80dpbnfk44" path="res://scenes/puzzles/puzzle_1/puzzle_1.tres" id="3_lyomv"]
-[ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_plhdc"]
-[ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="5_l0w3a"]
-[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/door/door.tscn" id="6_ikhgy"]
+[ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_kxpkl"]
+[ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_qf72f"]
+[ext_resource type="TileSet" uid="uid://dlc80dpbnfk44" path="res://scenes/puzzles/puzzle_intro/puzzle_intro.tres" id="3_d6h43"]
+[ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_jlyhj"]
+[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/door/door.tscn" id="5_c0uc5"]
+[ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="6_sm5la"]
 
-[node name="Puzzle1" type="Node"]
+[node name="PuzzleIntro" type="Node"]
 
-[node name="Vignette" parent="." instance=ExtResource("1_2va12")]
+[node name="Vignette" parent="." instance=ExtResource("1_kxpkl")]
 
-[node name="SpaceBackdrop" parent="." instance=ExtResource("2_uschr")]
+[node name="SpaceBackdrop" parent="." instance=ExtResource("2_qf72f")]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("3_lyomv")
+tile_set = ExtResource("3_d6h43")
 format = 2
 layer_0/name = "Background"
 layer_0/z_index = -1
@@ -28,15 +28,15 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="EntityLayer" type="Node2D" parent="."]
 
-[node name="Player" parent="EntityLayer" instance=ExtResource("4_plhdc")]
+[node name="Player" parent="EntityLayer" instance=ExtResource("4_jlyhj")]
 
-[node name="Door" parent="." instance=ExtResource("6_ikhgy")]
+[node name="Door" parent="." instance=ExtResource("5_c0uc5")]
 position = Vector2(-112, 0)
 
-[node name="Door2" parent="." instance=ExtResource("6_ikhgy")]
+[node name="Door2" parent="." instance=ExtResource("5_c0uc5")]
 position = Vector2(784, 0)
 
-[node name="GameCamera" parent="." instance=ExtResource("5_l0w3a")]
+[node name="GameCamera" parent="." instance=ExtResource("6_sm5la")]
 position = Vector2(690, -128)
 limit_left = -160
 limit_top = -288

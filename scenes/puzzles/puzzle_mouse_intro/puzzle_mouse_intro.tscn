@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_hba8r"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_5am4p"]
-[ext_resource type="TileSet" uid="uid://dqbirx4ebsdbj" path="res://scenes/puzzles/puzzle_4/puzzle_4.tres" id="3_k86ve"]
+[ext_resource type="TileSet" uid="uid://dqbirx4ebsdbj" path="res://scenes/puzzles/puzzle_double_mouse/puzzle_double_mouse.tres" id="3_k86ve"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_8foh3"]
 [ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/door/door.tscn" id="5_vfx76"]
 [ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/button/button.tscn" id="6_n01uv"]
