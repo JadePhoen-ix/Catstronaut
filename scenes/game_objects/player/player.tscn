@@ -1,10 +1,11 @@
-[gd_scene load_steps=58 format=3 uid="uid://c4kea8118483s"]
+[gd_scene load_steps=60 format=3 uid="uid://c4kea8118483s"]
 
 [ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
 [ext_resource type="Texture2D" uid="uid://cygcdnnb063c6" path="res://scenes/game_objects/player/player.png" id="3_53q1s"]
-[ext_resource type="PackedScene" uid="uid://bw0h3mk6so7q5" path="res://scenes/components/physics/hitbox/hitbox_component.tscn" id="4_unkui"]
+[ext_resource type="PackedScene" uid="uid://bw0h3mk6so7q5" path="res://scenes/components/physics/hitbox/hitbox.tscn" id="4_ghnvb"]
 [ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="5_exhn1"]
+[ext_resource type="PackedScene" uid="uid://cphc2aty45eda" path="res://scenes/components/physics/interaction_trigger/interaction_trigger.tscn" id="5_u4uta"]
 [ext_resource type="AudioStream" uid="uid://bxnvjeyr1cwq1" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_1.wav" id="6_bn4yy"]
 [ext_resource type="AudioStream" uid="uid://coov20uf6a4ff" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_2.wav" id="7_4232y"]
 [ext_resource type="AudioStream" uid="uid://cll0w4nc0lfsy" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_3.wav" id="8_yhar8"]
@@ -622,6 +623,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xft"]
 size = Vector2(32, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycgp8"]
+size = Vector2(36, 34)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 collision_mask = 3
@@ -660,12 +664,19 @@ position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_jayfc")
 offset = Vector2(0, -16)
 
-[node name="HitboxComponent" parent="." instance=ExtResource("4_unkui")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="Hitbox" parent="." instance=ExtResource("4_ghnvb")]
 visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_o6xft")
+
+[node name="InteractionTrigger" parent="." instance=ExtResource("5_u4uta")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTrigger"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_ycgp8")
 
 [node name="WalkRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
 streams = Array[AudioStream]([ExtResource("6_bn4yy"), ExtResource("7_4232y"), ExtResource("8_yhar8"), ExtResource("9_fljuy"), ExtResource("10_o8t7k"), ExtResource("11_5pu46"), ExtResource("12_kfxye"), ExtResource("13_6uok7"), ExtResource("14_cgkxg"), ExtResource("15_8qofs"), ExtResource("16_4tvn8"), ExtResource("17_o1lcc"), ExtResource("18_16tvk"), ExtResource("19_q6kmx")])

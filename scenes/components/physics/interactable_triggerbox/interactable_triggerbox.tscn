@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bpco01rh2tovq"]
+
+[node name="InteractableTriggerbox" type="Area2D"]
+collision_layer = 32
+collision_mask = 0

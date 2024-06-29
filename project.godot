@@ -34,7 +34,6 @@ window/size/window_height_override=810
 window/stretch/mode="viewport"
 window/snap/snap_2d_transforms_to_pixel=false
 window/snap/snap_2d_vertices_to_pixel=false
-window/layer_2=""
 
 [gui]
 
@@ -92,6 +91,7 @@ reverse_gravity={
 2d_physics/layer_1="Floor"
 2d_physics/layer_2="Wall"
 2d_physics/layer_5="Hazard"
+2d_physics/layer_6="Interactable"
 
 [rendering]
 
