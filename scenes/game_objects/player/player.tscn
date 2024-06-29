@@ -634,6 +634,7 @@ floor_block_on_wall = false
 platform_floor_layers = 4294901761
 platform_wall_layers = 2
 script = ExtResource("1_o0x4b")
+jump_speed = 370.0
 
 [node name="Velocity2D" parent="." instance=ExtResource("1_01q1c")]
 
