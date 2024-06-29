@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://nxjat54qepdn"]
+
+[ext_resource type="Texture2D" uid="uid://tiqyuxebshow" path="res://scenes/game_objects/button/button sheet.png" id="1_fl67y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0psuv"]
+atlas = ExtResource("1_fl67y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2bu0"]
+atlas = ExtResource("1_fl67y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rklie"]
+atlas = ExtResource("1_fl67y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4fgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0psuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2bu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rklie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Button" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f4fgj")
+offset = Vector2(0, -16)
