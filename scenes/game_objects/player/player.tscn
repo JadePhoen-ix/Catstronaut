@@ -1,8 +1,9 @@
-[gd_scene load_steps=60 format=3 uid="uid://c4kea8118483s"]
+[gd_scene load_steps=61 format=3 uid="uid://c4kea8118483s"]
 
 [ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
 [ext_resource type="Texture2D" uid="uid://cygcdnnb063c6" path="res://scenes/game_objects/player/player.png" id="3_53q1s"]
+[ext_resource type="PackedScene" uid="uid://b87gfxrbe1eyx" path="res://scenes/components/ui/pausable/pausable.tscn" id="3_hchw7"]
 [ext_resource type="PackedScene" uid="uid://bw0h3mk6so7q5" path="res://scenes/components/physics/hitbox/hitbox.tscn" id="4_ghnvb"]
 [ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="5_exhn1"]
 [ext_resource type="PackedScene" uid="uid://cphc2aty45eda" path="res://scenes/components/physics/interaction_trigger/interaction_trigger.tscn" id="5_u4uta"]
@@ -635,6 +636,8 @@ platform_wall_layers = 2
 script = ExtResource("1_o0x4b")
 
 [node name="Velocity2D" parent="." instance=ExtResource("1_01q1c")]
+
+[node name="Pausable" parent="." instance=ExtResource("3_hchw7")]
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1

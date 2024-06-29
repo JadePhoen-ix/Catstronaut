@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-#const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.tscn")
+const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.tscn")
 
 var is_closing := false
 
@@ -57,11 +57,11 @@ func _on_resume_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	pass
-	#var options_instance := OPTIONS_MENU_SCENE.instantiate() as OptionsMenu
-	#add_child(options_instance)
-	#options_instance.disable_screen_darken()
-	#options_instance.back_button_pressed.connect(_on_options_closed.bind(options_instance))
+	var options_instance := OPTIONS_MENU_SCENE.instantiate() as OptionsMenu
+	options_instance.back_button_pressed.connect(_on_options_closed.bind(options_instance))
+	add_child(options_instance)
+	
+	panel_container.modulate = Color.TRANSPARENT
 
 
 func _on_main_menu_pressed() -> void:
@@ -70,5 +70,6 @@ func _on_main_menu_pressed() -> void:
 
 func _on_options_closed(options_instance: OptionsMenu) -> void:
 	options_instance.queue_free()
+	panel_container.modulate = Color.WHITE
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxhx1333hebx2"]
 
-[ext_resource type="Script" path="res://scenes/ui/screen_darken/screen_darken_component.gd" id="1_44bjb"]
+[ext_resource type="Script" path="res://scenes/components/ui/screen_darken/screen_darken.gd" id="1_44bjb"]
 
 [sub_resource type="Animation" id="Animation_77oga"]
 length = 0.001
