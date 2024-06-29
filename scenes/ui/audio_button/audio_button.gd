@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var random_audio_component := $RandomAudioComponent as RandomAudioComponent
+@onready var random_audio := $RandomAudio as RandomAudio
 
 
 func _ready() -> void:
@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	random_audio_component.play_random()
+	random_audio.play_random()
