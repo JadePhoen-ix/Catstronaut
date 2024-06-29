@@ -77,7 +77,7 @@ metadata/_snap_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ftmjs"]
 shader = ExtResource("1_1kbky")
-shader_parameter/transition_color = Color(0.247059, 0.14902, 0.192157, 1)
+shader_parameter/transition_color = Color(0.619608, 0.505882, 0.752941, 1)
 shader_parameter/percent = 0.0
 shader_parameter/transition_texture = SubResource("GradientTexture2D_y73ip")
 

@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 const MAIN_SCENE_PATH := "res://scenes/puzzles/puzzle_1/puzzle_1.tscn"
-#const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.tscn")
+const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.tscn")
 const MAIN_MENU_SONG := preload("res://assets/audio/music/main_menu.wav")
 
 var camera_offset := Vector2.ZERO
@@ -30,11 +30,11 @@ func _on_play_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	pass
-	#var options_instance := OPTIONS_MENU_SCENE.instantiate() as OptionsMenu
-	#add_child(options_instance)
-	#options_instance.back_button_pressed.connect(_on_options_closed.bind(options_instance))
-	#menu_container.modulate = Color.TRANSPARENT
+	var options_instance := OPTIONS_MENU_SCENE.instantiate() as OptionsMenu
+	options_instance.back_button_pressed.connect(_on_options_closed.bind(options_instance))
+	add_child(options_instance)
+	
+	menu_container.modulate = Color.TRANSPARENT
 
 
 func _on_options_closed(options_instance: OptionsMenu) -> void:

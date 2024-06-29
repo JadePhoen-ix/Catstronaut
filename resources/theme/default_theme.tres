@@ -1,8 +1,55 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bbq08jmx55cqa"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bbq08jmx55cqa"]
 
 [ext_resource type="FontFile" uid="uid://gxk4jobyby13" path="res://resources/fonts/Kenney Blocks.ttf" id="1_7xep3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hikx0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ygl7n"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7tent"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h5b5r"]
+size = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5pvq"]
+bg_color = Color(1, 0.85098, 0.909804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7aup"]
+bg_color = Color(1, 0.85098, 0.909804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xf3n"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.619608, 0.505882, 0.752941, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xio42"]
 bg_color = Color(0.658824, 0.623529, 0.8, 1)
@@ -24,6 +71,12 @@ Button/colors/font_outline_color = Color(0.32549, 0.262745, 0.498039, 1)
 Button/colors/font_pressed_color = Color(0.658824, 0.623529, 0.8, 1)
 Button/constants/outline_size = 4
 Button/styles/focus = SubResource("StyleBoxEmpty_hikx0")
+HSlider/icons/grabber = SubResource("PlaceholderTexture2D_ygl7n")
+HSlider/icons/grabber_disabled = SubResource("PlaceholderTexture2D_7tent")
+HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_h5b5r")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_w5pvq")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_m7aup")
+HSlider/styles/slider = SubResource("StyleBoxFlat_6xf3n")
 Label/colors/font_color = Color(1, 0.85098, 0.909804, 1)
 Label/colors/font_outline_color = Color(0.32549, 0.262745, 0.498039, 1)
 Label/constants/outline_size = 4
