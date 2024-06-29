@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c4kea8118483s"]
+[gd_scene load_steps=58 format=3 uid="uid://c4kea8118483s"]
 
 [ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
@@ -21,6 +21,15 @@
 [ext_resource type="AudioStream" uid="uid://ctficrrh1xglp" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_14.wav" id="19_q6kmx"]
 [ext_resource type="AudioStream" uid="uid://r6slcrpon8fn" path="res://assets/audio/gameplay/Reverse_Gravity_Inverted-Normal.wav" id="20_6mddm"]
 [ext_resource type="AudioStream" uid="uid://dhnwkwogryth2" path="res://assets/audio/gameplay/Reverse_Gravity_Normal-Inverted.wav" id="21_1fg7h"]
+[ext_resource type="AudioStream" uid="uid://bbefgexek8qhj" path="res://assets/audio/cat/cat_jump_1.wav" id="22_jaqe3"]
+[ext_resource type="AudioStream" uid="uid://bg7nicyn1ves7" path="res://assets/audio/cat/cat_jump_2.wav" id="23_fr1v4"]
+[ext_resource type="AudioStream" uid="uid://m4vsijycjmpl" path="res://assets/audio/cat/cat_jump_3.wav" id="24_hs7c8"]
+[ext_resource type="AudioStream" uid="uid://dajh81448vjks" path="res://assets/audio/cat/cat_jump_4.wav" id="25_ncwoi"]
+[ext_resource type="AudioStream" uid="uid://gkdbyfnsnwv2" path="res://assets/audio/cat/cat_jump_5.wav" id="26_j54oc"]
+[ext_resource type="AudioStream" uid="uid://c1fvewmyvkalr" path="res://assets/audio/cat/cat_fall_impact_1.wav" id="27_pryv2"]
+[ext_resource type="AudioStream" uid="uid://fbqwji2cw774" path="res://assets/audio/cat/cat_fall_impact_2.wav" id="28_cx1u2"]
+[ext_resource type="AudioStream" uid="uid://bjx1y7cjrpdxi" path="res://assets/audio/cat/cat_fall_impact_3.wav" id="29_4gm7g"]
+[ext_resource type="AudioStream" uid="uid://d27cy2p8cqi03" path="res://assets/audio/cat/cat_fall_impact_4.wav" id="30_xyku2"]
 
 [sub_resource type="Animation" id="Animation_5bt03"]
 length = 0.001
@@ -309,6 +318,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, 0.174533, -0.0872665]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JumpRandomAudio2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play_random"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fqd51"]
 resource_name = "run"
@@ -449,14 +472,14 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("WalkRandomAudio2D")
+tracks/2/path = NodePath("LandRandomAudio2D")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [-0.2],
+"args": [],
 "method": &"play_random"
 }]
 }
@@ -649,3 +672,9 @@ streams = Array[AudioStream]([ExtResource("6_bn4yy"), ExtResource("7_4232y"), Ex
 
 [node name="FlipRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
 streams = Array[AudioStream]([ExtResource("20_6mddm"), ExtResource("21_1fg7h")])
+
+[node name="JumpRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
+streams = Array[AudioStream]([ExtResource("22_jaqe3"), ExtResource("23_fr1v4"), ExtResource("24_hs7c8"), ExtResource("25_ncwoi"), ExtResource("26_j54oc")])
+
+[node name="LandRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
+streams = Array[AudioStream]([ExtResource("27_pryv2"), ExtResource("28_cx1u2"), ExtResource("29_4gm7g"), ExtResource("30_xyku2")])

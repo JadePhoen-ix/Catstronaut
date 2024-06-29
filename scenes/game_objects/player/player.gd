@@ -7,6 +7,7 @@ extends CharacterBody2D
 var adjusted_gravity := gravity
 var jump_cancel_multiplier := 3.0
 var was_grounded_last_frame := true
+var ready_timer: SceneTreeTimer
 
 var is_flipped: bool:
 	get: return !up_direction.y == -1
@@ -24,6 +25,10 @@ var is_falling: bool:
 @onready var velocity_2d := $Velocity2D as Velocity2D
 @onready var visuals := $Pivot as Node2D
 @onready var flip_random_audio_2d := $FlipRandomAudio2D as RandomAudio2D
+
+
+func _ready() -> void:
+	ready_timer = get_tree().create_timer(0.1)
 
 
 func _process(delta: float) -> void:
@@ -71,7 +76,7 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 	if move_sign != 0:
 		visuals.scale = Vector2(move_sign, visuals.scale.y)
 	
-	if just_landed:
+	if just_landed and ready_timer.time_left <= 0.0:
 		land_animation_player.play("land")
 	
 	if animation_player.current_animation == "flip" and animation_player.is_playing():
@@ -82,7 +87,7 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 	
 	if is_falling:
 		animation_player.play("fall")
-	elif movement_vector.y == up_direction.y:
+	elif Input.is_action_just_pressed("jump"):
 		animation_player.play("jump")
 	elif movement_vector.x != 0.0 and is_on_floor():
 		animation_player.play("run")
