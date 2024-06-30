@@ -6,6 +6,7 @@ const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.t
 var is_closing := false
 
 @onready var resume_button := $%ResumeButton as Button
+@onready var restart_button := %RestartButton as Button
 @onready var options_button := $%OptionsButton as Button
 @onready var main_menu_button := $%MainMenuButton as Button
 @onready var screen_darken := $ScreenDarken as ScreenDarken
@@ -17,6 +18,7 @@ func _ready() -> void:
 	panel_container.pivot_offset = panel_container.size / 2.0
 	
 	resume_button.pressed.connect(_on_resume_pressed)
+	restart_button.pressed.connect(_on_restart_pressed)
 	options_button.pressed.connect(_on_options_pressed)
 	main_menu_button.pressed.connect(_on_main_menu_pressed)
 	
@@ -54,6 +56,13 @@ func close() -> void:
 
 func _on_resume_pressed() -> void:
 	close()
+
+
+func _on_restart_pressed() -> void:
+	ScreenTransition.transition()
+	await ScreenTransition.transitioned_halfway
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 
 
 func _on_options_pressed() -> void:

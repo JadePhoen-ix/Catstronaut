@@ -45,12 +45,19 @@ text = "GAME PAUSED"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 0
 
 [node name="ResumeButton" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_1vf5j")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Resume"
+
+[node name="RestartButton" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_1vf5j")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Restart Level"
 
 [node name="OptionsButton" parent="MenuContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_1vf5j")]
 unique_name_in_owner = true
