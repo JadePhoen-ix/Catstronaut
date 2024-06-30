@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwnwju7rvg8qi"]
+[gd_scene load_steps=4 format=3 uid="uid://dwnwju7rvg8qi"]
 
 [ext_resource type="Script" path="res://scenes/ui/audio_button/audio_button.gd" id="1_5w7ul"]
 [ext_resource type="PackedScene" uid="uid://7y6fon7x0jcm" path="res://scenes/components/audio/random_audio/random_audio.tscn" id="2_8imfc"]
+[ext_resource type="AudioStream" uid="uid://djd4guyfbc40l" path="res://assets/audio/menu/on_button_hover_purr.wav" id="3_sasxa"]
 
 [node name="AudioButton" type="Button"]
 offset_right = 6.0
@@ -12,5 +13,9 @@ text = "Audio Button"
 flat = true
 script = ExtResource("1_5w7ul")
 
-[node name="RandomAudio" parent="." instance=ExtResource("2_8imfc")]
+[node name="ClickRandomAudio" parent="." instance=ExtResource("2_8imfc")]
 process_mode = 3
+
+[node name="HoverRandomAudio" parent="." instance=ExtResource("2_8imfc")]
+process_mode = 3
+streams = Array[AudioStream]([ExtResource("3_sasxa")])
