@@ -31,11 +31,9 @@ size = Vector2(32, 32)
 [node name="GravityBox" type="CharacterBody2D"]
 collision_layer = 65
 collision_mask = 323
-floor_block_on_wall = false
 platform_floor_layers = 4294901761
 safe_margin = 0.5
 script = ExtResource("1_40od0")
-gravity = 960.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ya072")
