@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ftv4maeumkd7"]
+
+[ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_1g0iq"]
+[ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_odnbn"]
+[ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="3_io5c6"]
+[ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_mq611"]
+[ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="5_rq4qd"]
+
+[node name="Puzzle" type="Node"]
+
+[node name="Vignette" parent="." instance=ExtResource("1_1g0iq")]
+
+[node name="SpaceBackdrop" parent="." instance=ExtResource("2_odnbn")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_mq611")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_1/name = "Foreground"
+layer_1/z_index = 2
+layer_1/tile_data = PackedInt32Array()
+
+[node name="EntityLayer" type="Node2D" parent="."]
+
+[node name="Player" parent="EntityLayer" instance=ExtResource("3_io5c6")]
+
+[node name="GameCamera" parent="." instance=ExtResource("5_rq4qd")]
