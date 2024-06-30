@@ -6,15 +6,22 @@ extends Interactable
 	set(value):
 		start_open = value
 		open = value
-		sprite.frame = int(open) * 3
-		door_collision_shape.disabled = open
+		if Engine.is_editor_hint():
+			sprite.frame = int(open) * 3
+			door_collision_shape.disabled = open
 
-var open := false
+var open: bool
 
 @onready var animation_player := $AnimationPlayer as AnimationPlayer 
 @onready var sprite := $AnimatedSprite2D as AnimatedSprite2D
 @onready var door_collision_shape := $StaticBody2D/DoorCollisionShape2D as  CollisionShape2D
 @onready var random_audio_2d := $RandomAudio2D as RandomAudio2D
+
+
+func _ready() -> void:
+	if start_open:
+		sprite.frame = 3
+		door_collision_shape.disabled = true
 
 
 func _interaction() -> void:
