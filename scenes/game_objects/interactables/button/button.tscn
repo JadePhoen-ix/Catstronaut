@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://nxjat54qepdn"]
+[gd_scene load_steps=8 format=3 uid="uid://nxjat54qepdn"]
 
+[ext_resource type="Script" path="res://scenes/game_objects/interactables/button/button.gd" id="1_ct211"]
 [ext_resource type="Texture2D" uid="uid://tiqyuxebshow" path="res://scenes/game_objects/interactables/button/button sheet.png" id="1_fl67y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0psuv"]
@@ -31,8 +32,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtufg"]
+size = Vector2(32, 6)
+
 [node name="Button" type="Node2D"]
+script = ExtResource("1_ct211")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f4fgj")
 offset = Vector2(0, -16)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_dtufg")
