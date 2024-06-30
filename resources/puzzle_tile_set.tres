@@ -1,6 +1,11 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bu40uktaq3g2g"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bu40uktaq3g2g"]
 
 [ext_resource type="Texture2D" uid="uid://fr00l22awjdl" path="res://assets/tiles/tileset space station.png" id="1_lo7iy"]
+[ext_resource type="PackedScene" uid="uid://b74hhqxh2rcn" path="res://scenes/vfx/wire_fx/wire_fx.tscn" id="1_t6xsq"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xijot"]
+resource_name = "particles"
+scenes/1/scene = ExtResource("1_t6xsq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jwli"]
 texture = ExtResource("1_lo7iy")
@@ -626,9 +631,9 @@ texture_region_size = Vector2i(32, 32)
 3:7/0/terrain = 0
 3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_0/angular_velocity = 0.0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:7/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_1/angular_velocity = 0.0
-3:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:7/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_2/angular_velocity = 0.0
 3:7/0/terrains_peering_bit/right_side = 0
@@ -642,9 +647,9 @@ texture_region_size = Vector2i(32, 32)
 3:6/0/terrain = 0
 3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:6/0/physics_layer_0/angular_velocity = 0.0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:6/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 3:6/0/physics_layer_1/angular_velocity = 0.0
-3:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:6/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 3:6/0/physics_layer_2/angular_velocity = 0.0
 3:6/0/terrains_peering_bit/right_side = 0
@@ -658,9 +663,9 @@ texture_region_size = Vector2i(32, 32)
 4:6/0/terrain = 0
 4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_0/angular_velocity = 0.0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:6/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_1/angular_velocity = 0.0
-4:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:6/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_2/angular_velocity = 0.0
 4:6/0/terrains_peering_bit/right_side = 0
@@ -674,9 +679,9 @@ texture_region_size = Vector2i(32, 32)
 4:7/0/terrain = 0
 4:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_0/angular_velocity = 0.0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:7/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_1/angular_velocity = 0.0
-4:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:7/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_2/angular_velocity = 0.0
 4:7/0/terrains_peering_bit/right_side = 0
@@ -685,6 +690,37 @@ texture_region_size = Vector2i(32, 32)
 4:7/0/terrains_peering_bit/bottom_left_corner = 0
 4:7/0/terrains_peering_bit/left_side = 0
 4:7/0/terrains_peering_bit/top_side = 0
+8:4/0 = 0
+8:4/0/terrain_set = 0
+8:4/0/terrain = 1
+8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:4/0/physics_layer_0/angular_velocity = 0.0
+8:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+8:4/0/physics_layer_1/angular_velocity = 0.0
+8:4/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+8:4/0/physics_layer_2/angular_velocity = 0.0
+8:4/0/terrains_peering_bit/bottom_side = 1
+8:5/0 = 0
+8:5/0/terrain_set = 0
+8:5/0/terrain = 1
+8:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:5/0/physics_layer_0/angular_velocity = 0.0
+8:5/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+8:5/0/physics_layer_1/angular_velocity = 0.0
+8:5/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+8:5/0/physics_layer_2/angular_velocity = 0.0
+8:5/0/terrains_peering_bit/bottom_side = 1
+8:5/0/terrains_peering_bit/top_side = 1
+8:6/0 = 0
+8:6/0/terrain_set = 0
+8:6/0/terrain = 1
+8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:6/0/physics_layer_0/angular_velocity = 0.0
+8:6/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+8:6/0/physics_layer_1/angular_velocity = 0.0
+8:6/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+8:6/0/physics_layer_2/angular_velocity = 0.0
+8:6/0/terrains_peering_bit/top_side = 1
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -706,3 +742,4 @@ custom_data_layer_0/type = 4
 custom_data_layer_1/name = "Normal"
 custom_data_layer_1/type = 5
 sources/1 = SubResource("TileSetAtlasSource_1jwli")
+sources/0 = SubResource("TileSetScenesCollectionSource_xijot")
