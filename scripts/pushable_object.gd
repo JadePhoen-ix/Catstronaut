@@ -3,7 +3,7 @@ class_name PushableObject
 
 
 @export_range(0.0, 10000.0, 5.0) var push_force := 2600.0
-@export_range(10.0, 10000.0, 10.0) var gravity := 9600.0
+@export_range(10.0, 10000.0, 10.0) var gravity := 960.0
 
 var is_flipped: bool:
 	get: return !up_direction.y == -1
