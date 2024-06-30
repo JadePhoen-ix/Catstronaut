@@ -1,33 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://6c6kek0alceu"]
+[gd_scene load_steps=7 format=3 uid="uid://6c6kek0alceu"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/physics/gravity_box/gravity_box.gd" id="1_40od0"]
+[ext_resource type="Texture2D" uid="uid://yp2qyrrg5bl2" path="res://scenes/game_objects/physics/gravity_box/box heavy gravity.png" id="2_kbmyc"]
 
-[sub_resource type="Gradient" id="Gradient_m5anx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m53o5"]
+atlas = ExtResource("2_kbmyc")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ae40p"]
-gradient = SubResource("Gradient_m5anx")
-width = 32
-height = 32
+[sub_resource type="AtlasTexture" id="AtlasTexture_yde3x"]
+atlas = ExtResource("2_kbmyc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya072"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m53o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yde3x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdgsq"]
-size = Vector2(38, 35)
+size = Vector2(32, 32)
 
 [node name="GravityBox" type="CharacterBody2D"]
 collision_layer = 65
 collision_mask = 323
 floor_block_on_wall = false
-platform_floor_layers = 4294902081
-platform_wall_layers = 2
+platform_floor_layers = 4294901761
+safe_margin = 0.5
 script = ExtResource("1_40od0")
 gravity = 960.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, -17.5)
-scale = Vector2(1.1875, 1.09375)
-texture = SubResource("GradientTexture2D_ae40p")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ya072")
+offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17.5)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_tdgsq")

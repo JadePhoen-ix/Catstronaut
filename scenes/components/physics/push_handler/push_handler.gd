@@ -5,6 +5,7 @@ class_name PushHandler
 func push_objects(body: CharacterBody2D) -> void:
 	for i in body.get_slide_collision_count():
 		var collision := body.get_slide_collision(i)
+		
 		if collision.get_normal() == body.up_direction:
 			continue
 		

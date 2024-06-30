@@ -1,31 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsplg5iyw7yxs"]
+[gd_scene load_steps=4 format=3 uid="uid://bsplg5iyw7yxs"]
 
 [ext_resource type="Script" path="res://scripts/pushable_object.gd" id="1_f4cv1"]
-
-[sub_resource type="Gradient" id="Gradient_m5anx"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ae40p"]
-gradient = SubResource("Gradient_m5anx")
-width = 32
-height = 32
+[ext_resource type="Texture2D" uid="uid://b3bnrll6hbprb" path="res://scenes/game_objects/physics/pushable_box/heavy box.png" id="2_ipyvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdgsq"]
-size = Vector2(38, 35)
+size = Vector2(32, 32)
 
 [node name="PushableBox" type="CharacterBody2D"]
 collision_layer = 65
 collision_mask = 323
 floor_block_on_wall = false
-platform_floor_layers = 4294902081
-platform_wall_layers = 2
+platform_floor_layers = 4294901761
 script = ExtResource("1_f4cv1")
 gravity = 960.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, -17.5)
-scale = Vector2(1.1875, 1.09375)
-texture = SubResource("GradientTexture2D_ae40p")
+position = Vector2(-1.19209e-07, -16)
+texture = ExtResource("2_ipyvo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17.5)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_tdgsq")
