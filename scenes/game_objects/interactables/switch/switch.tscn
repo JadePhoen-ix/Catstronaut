@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwppk0ut3vxxd"]
 
-[ext_resource type="Script" path="res://scenes/game_objects/switch/switch.gd" id="1_66q1t"]
-[ext_resource type="Texture2D" uid="uid://dapf7sm18cmqr" path="res://scenes/game_objects/switch/switch_lever.png" id="1_hbggn"]
-[ext_resource type="Texture2D" uid="uid://beb6fry4jewa1" path="res://scenes/game_objects/switch/switch_base.png" id="2_v1uce"]
+[ext_resource type="Script" path="res://scenes/game_objects/interactables/switch/switch.gd" id="1_66q1t"]
+[ext_resource type="Texture2D" uid="uid://dapf7sm18cmqr" path="res://scenes/game_objects/interactables/switch/switch_lever.png" id="1_hbggn"]
+[ext_resource type="Texture2D" uid="uid://beb6fry4jewa1" path="res://scenes/game_objects/interactables/switch/switch_base.png" id="2_v1uce"]
 [ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="3_lru0b"]
 [ext_resource type="AudioStream" uid="uid://qmj70ws256u2" path="res://assets/audio/environment/space_station_switch_1.wav" id="4_t5te5"]
 [ext_resource type="AudioStream" uid="uid://r7d5ejb0jl5a" path="res://assets/audio/environment/space_station_switch_2.wav" id="5_k7hpg"]

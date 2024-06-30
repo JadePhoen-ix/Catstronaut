@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_iabqj"]
 [ext_resource type="TileSet" uid="uid://dqbirx4ebsdbj" path="res://scenes/puzzles/puzzle_double_mouse/puzzle_double_mouse.tres" id="3_kd85b"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_pime3"]
-[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/door/door.tscn" id="5_087vv"]
-[ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/button/button.tscn" id="6_in25r"]
+[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="5_087vv"]
+[ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/interactables/button/button.tscn" id="6_in25r"]
 [ext_resource type="PackedScene" uid="uid://b5l7mcdpqfkwl" path="res://scenes/game_objects/mouse/mouse.tscn" id="7_0oefc"]
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="8_sdlbn"]
 

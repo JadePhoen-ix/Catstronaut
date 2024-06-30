@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_qf72f"]
 [ext_resource type="TileSet" uid="uid://dlc80dpbnfk44" path="res://scenes/puzzles/puzzle_intro/puzzle_intro.tres" id="3_d6h43"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_jlyhj"]
-[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/door/door.tscn" id="5_c0uc5"]
+[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="5_c0uc5"]
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="6_sm5la"]
 
 [node name="PuzzleIntro" type="Node"]

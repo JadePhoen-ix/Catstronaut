@@ -5,8 +5,8 @@
 [ext_resource type="TileSet" uid="uid://c3g3jhmf2of5l" path="res://scenes/puzzles/puzzle_double_button/puzzle_double_button.tres" id="3_g0wqb"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_0oact"]
 [ext_resource type="PackedScene" uid="uid://b5l7mcdpqfkwl" path="res://scenes/game_objects/mouse/mouse.tscn" id="5_kw1wp"]
-[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/door/door.tscn" id="6_hbar5"]
-[ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/button/button.tscn" id="7_4qgk2"]
+[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="6_hbar5"]
+[ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/interactables/button/button.tscn" id="7_4qgk2"]
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="8_gwgr7"]
 
 [node name="Puzzle4" type="Node"]

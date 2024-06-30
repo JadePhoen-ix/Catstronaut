@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://brfcg0vda40ch"]
 
-[ext_resource type="Script" path="res://scenes/game_objects/door/door.gd" id="1_mjl86"]
-[ext_resource type="Texture2D" uid="uid://4kmkqliibdw5" path="res://scenes/game_objects/door/door.png" id="1_vmtnx"]
+[ext_resource type="Script" path="res://scenes/game_objects/interactables/door/door.gd" id="1_mjl86"]
+[ext_resource type="Texture2D" uid="uid://4kmkqliibdw5" path="res://scenes/game_objects/interactables/door/door.png" id="1_vmtnx"]
 [ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="3_0y8ai"]
 [ext_resource type="AudioStream" uid="uid://be38yy86p3ec5" path="res://assets/audio/environment/door_open_1.wav" id="4_aukkh"]
 

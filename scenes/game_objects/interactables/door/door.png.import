@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dapf7sm18cmqr"
-path="res://.godot/imported/switch_lever.png-4c429d2c412cddd1348e27e1ace2f6af.ctex"
+uid="uid://4kmkqliibdw5"
+path="res://.godot/imported/door.png-e60cee097f2b832dbf1a1c61885789a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game_objects/switch/switch_lever.png"
-dest_files=["res://.godot/imported/switch_lever.png-4c429d2c412cddd1348e27e1ace2f6af.ctex"]
+source_file="res://scenes/game_objects/interactables/door/door.png"
+dest_files=["res://.godot/imported/door.png-e60cee097f2b832dbf1a1c61885789a2.ctex"]
 
 [params]
 
