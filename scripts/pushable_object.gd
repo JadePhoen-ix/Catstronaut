@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
+	# Deceleration / fake friction
 	velocity.x = lerp(0.0, velocity.x, pow(2.0, -15.0 * get_process_delta_time()))
 	
 	move_and_slide()
