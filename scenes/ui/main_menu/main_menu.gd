@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-const MAIN_SCENE_PATH := "res://scenes/puzzles/puzzle_1/puzzle_1.tscn"
+const MAIN_SCENE_PATH := "res://scenes/puzzles/puzzle_intro/puzzle_intro.tscn"
 const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.tscn")
 const MAIN_MENU_SONG := preload("res://assets/audio/music/main_menu.wav")
 
