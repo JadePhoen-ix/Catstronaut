@@ -38,8 +38,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var movement_vector := get_movement_vector()
 	was_grounded_last_frame = is_on_floor()
-	if not was_grounded_last_frame and is_flipping:
-		movement_vector.x = lerp(0.0, velocity.x, pow(2.0, -15.0 * delta))
 	
 	velocity_2d.accelerate_in_direction(movement_vector)
 	
