@@ -31,7 +31,7 @@ func _ready() -> void:
 	ready_timer = get_tree().create_timer(0.1)
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var movement_vector := get_movement_vector()
 	was_grounded_last_frame = is_on_floor()
 	
@@ -48,6 +48,8 @@ func _process(delta: float) -> void:
 	
 	velocity_2d.move(self)
 	
+	push_objects()
+	
 	if was_grounded_last_frame and not is_on_floor():
 		coyote_timer.start()
 	
@@ -56,12 +58,8 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("reverse_gravity"):
-		($Pivot as Node2D).scale.y *= -1
-		adjusted_gravity *= -1
-		up_direction *= -1
-		
-		flip_random_audio_2d.play_at_index(is_flipped)
-		animation_player.play("flip")
+		invert_gravity()
+		GameEvents.emit_reverse_gravity_pressed()
 
 
 func get_movement_vector() -> Vector2:
@@ -69,6 +67,26 @@ func get_movement_vector() -> Vector2:
 	movement_vector.x = Input.get_axis("move_left", "move_right")
 	movement_vector.y = -1.0 if Input.is_action_just_pressed("jump") else 0.0
 	return movement_vector
+
+
+func invert_gravity() -> void:
+	($Pivot as Node2D).scale.y *= -1
+	adjusted_gravity *= -1
+	up_direction *= -1
+	
+	flip_random_audio_2d.play_at_index(is_flipped)
+	animation_player.play("flip")
+
+
+func push_objects() -> void:
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		if collision.get_normal() == up_direction:
+			continue
+		
+		if collision.get_collider() is PushableObject:
+			var collider := collision.get_collider() as PushableObject
+			collider.push(Vector2(velocity.normalized().x, 0.0))
 
 
 func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
@@ -93,7 +111,5 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 		animation_player.play("run")
 	else:
 		animation_player.play("idle")
-
-
 
 

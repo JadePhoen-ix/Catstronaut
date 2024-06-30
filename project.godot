@@ -105,6 +105,8 @@ pause={
 2d_physics/layer_2="Wall"
 2d_physics/layer_5="Hazard"
 2d_physics/layer_6="Interactable"
+2d_physics/layer_7="PushableObject"
+2d_physics/layer_9="Player"
 
 [rendering]
 
