@@ -6,7 +6,7 @@ extends Interactable
 	set(value):
 		start_open = value
 		open = value
-		sprite.frame = open
+		sprite.frame = int(open) * 3
 		door_collision_shape.disabled = open
 
 var open := false
@@ -29,6 +29,6 @@ func set_door_state(value: bool) -> void:
 	else:
 		animation_player.play_backwards("default")
 	
-	random_audio_2d.play_at_index(open)
+	random_audio_2d.play_random()
 
 
