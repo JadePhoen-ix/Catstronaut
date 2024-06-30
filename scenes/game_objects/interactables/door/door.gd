@@ -36,6 +36,7 @@ func set_door_state(value: bool) -> void:
 	else:
 		animation_player.play_backwards("default")
 	
-	random_audio_2d.play_random()
+	if is_inside_tree():
+		random_audio_2d.play_random()
 
 
