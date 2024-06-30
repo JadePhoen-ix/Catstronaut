@@ -1,10 +1,11 @@
-[gd_scene load_steps=61 format=3 uid="uid://c4kea8118483s"]
+[gd_scene load_steps=62 format=3 uid="uid://c4kea8118483s"]
 
 [ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
 [ext_resource type="Texture2D" uid="uid://cygcdnnb063c6" path="res://scenes/game_objects/player/player.png" id="3_53q1s"]
 [ext_resource type="PackedScene" uid="uid://b87gfxrbe1eyx" path="res://scenes/components/ui/pausable/pausable.tscn" id="3_hchw7"]
 [ext_resource type="PackedScene" uid="uid://bw0h3mk6so7q5" path="res://scenes/components/physics/hitbox/hitbox.tscn" id="4_ghnvb"]
+[ext_resource type="PackedScene" uid="uid://b46qa72ouy3as" path="res://scenes/components/physics/push_handler/push_handler.tscn" id="4_rdsij"]
 [ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="5_exhn1"]
 [ext_resource type="PackedScene" uid="uid://cphc2aty45eda" path="res://scenes/components/physics/interaction_trigger/interaction_trigger.tscn" id="5_u4uta"]
 [ext_resource type="AudioStream" uid="uid://bxnvjeyr1cwq1" path="res://assets/audio/cat/Cat_Metal_Walk_Claws_1.wav" id="6_bn4yy"]
@@ -625,7 +626,7 @@ size = Vector2(32, 30)
 size = Vector2(36, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kawqb"]
-size = Vector2(22, 32)
+size = Vector2(22, 30)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 256
@@ -639,6 +640,8 @@ jump_speed = 370.0
 [node name="Velocity2D" parent="." instance=ExtResource("1_01q1c")]
 
 [node name="Pausable" parent="." instance=ExtResource("3_hchw7")]
+
+[node name="PushHandler" parent="." instance=ExtResource("4_rdsij")]
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -678,8 +681,8 @@ visible = false
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_ycgp8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+[node name="BodyCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_kawqb")
 
 [node name="WalkRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
