@@ -218,12 +218,20 @@ layout_mode = 2
 unique_name_in_owner = true
 z_index = 20
 layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../OptionsButton")
 text = "play"
 
 [node name="OptionsButton" parent="MenuContainer/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g6dok")]
 unique_name_in_owner = true
 z_index = 20
 layout_mode = 2
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
+focus_previous = NodePath("../PlayButton")
 text = "options"
 
 [node name="Cat" type="Node2D" parent="."]

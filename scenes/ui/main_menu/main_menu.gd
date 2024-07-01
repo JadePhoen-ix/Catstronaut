@@ -25,6 +25,11 @@ func _process(delta: float) -> void:
 	camera_2d.global_position = camera_offset
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("controller_input"):
+		play_button.grab_focus()
+
+
 func _on_play_pressed() -> void:
 	ScreenTransition.transition_to_scene(MAIN_SCENE_PATH)
 
