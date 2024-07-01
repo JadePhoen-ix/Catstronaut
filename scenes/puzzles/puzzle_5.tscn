@@ -50,6 +50,7 @@ rotation = 1.57079
 [node name="Player" parent="EntityLayer" instance=ExtResource("4_gksp4")]
 position = Vector2(176, 256)
 start_inverted = true
+start_facing_left = true
 
 [node name="PushableBox" parent="EntityLayer" instance=ExtResource("5_sdsdn")]
 position = Vector2(160, -96)
