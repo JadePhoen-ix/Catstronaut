@@ -2,10 +2,10 @@
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_70s70"]
 resource_name = "Reverb"
-room_size = 0.04
+room_size = 0.02
 damping = 0.2
-hipass = 0.71
-dry = 0.65
+hipass = 0.77
+dry = 0.7
 wet = 0.25
 
 [resource]
