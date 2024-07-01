@@ -54,7 +54,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("LeverSprite2D/InteractableTriggerbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -111,7 +111,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("LeverSprite2D/InteractableTriggerbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -146,7 +146,6 @@ texture = ExtResource("1_hbggn")
 offset = Vector2(0, -16)
 
 [node name="InteractableTriggerbox" parent="LeverSprite2D" instance=ExtResource("7_0280u")]
-unique_name_in_owner = true
 position = Vector2(-2.12132, 2.12132)
 rotation = 0.785398
 
