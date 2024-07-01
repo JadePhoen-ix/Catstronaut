@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 
-signal has_landed()
-
 @export var start_inverted := false
 @export_range(0.0, 1000.0, 5.0) var jump_speed := 335.0
 @export_range(10.0, 3000.0, 10.0) var gravity := 960.0
@@ -29,7 +27,7 @@ var is_falling: bool:
 @onready var land_animation_player := $LandAnimationPlayer as AnimationPlayer
 @onready var velocity_2d := $Velocity2D as Velocity2D
 @onready var visuals := $Pivot as Node2D
-@onready var flip_random_audio_2d := $FlipRandomAudio2D as RandomAudio2D
+@onready var flip_random_audio_2d := $%FlipRandomAudio2D as RandomAudio2D
 @onready var push_handler := $PushHandler as PushHandler
 @onready var hitbox := $Hitbox as Hitbox
 
@@ -106,6 +104,10 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 		if animation_player.current_animation != "death" or not animation_player.is_playing():
 			land_animation_player.stop()
 			animation_player.play("death")
+			%DeathRandomAudio2D.play_random()
+			$%ElectrocuteRandomAudio2D.play_random()
+			
+			GameEvents.emit_player_died()
 		return
 	
 	var move_sign := signf(movement_vector.x)
