@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/interactables/button/button.tscn" id="8_7xegn"]
 [ext_resource type="PackedScene" uid="uid://dwppk0ut3vxxd" path="res://scenes/game_objects/interactables/switch/switch.tscn" id="8_gtwwa"]
 [ext_resource type="PackedScene" uid="uid://7ibokh76y4td" path="res://scenes/game_objects/interactables/transition_trigger_box/transition_trigger_box.tscn" id="10_djt0l"]
-[ext_resource type="PackedScene" uid="uid://c120l8o4kncu2" path="res://scenes/ui/main_menu/main_menu.tscn" id="11_b14cv"]
+[ext_resource type="PackedScene" uid="uid://dqo7v7d6pyl2g" path="res://scenes/puzzles/puzzle_7.tscn" id="13_ymhye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g7cw"]
 size = Vector2(32, 96)
@@ -133,7 +133,7 @@ pan_speed = 0.0
 
 [node name="TransitionTriggerBox" parent="." instance=ExtResource("10_djt0l")]
 position = Vector2(320, 48)
-next_scene = ExtResource("11_b14cv")
+next_scene = ExtResource("13_ymhye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionTriggerBox"]
 shape = SubResource("RectangleShape2D_5g7cw")
