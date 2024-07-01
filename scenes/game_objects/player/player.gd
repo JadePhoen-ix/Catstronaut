@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 signal has_landed()
 
+@export var start_inverted := false
 @export_range(0.0, 1000.0, 5.0) var jump_speed := 335.0
 @export_range(10.0, 3000.0, 10.0) var gravity := 960.0
 
@@ -10,6 +11,7 @@ var jump_cancel_multiplier := 3.0
 var was_grounded_last_frame := true
 var ready_timer: SceneTreeTimer
 var is_flipping := false
+var is_dead := false
 
 var is_flipped: bool:
 	get: return !up_direction.y == -1
@@ -29,13 +31,22 @@ var is_falling: bool:
 @onready var visuals := $Pivot as Node2D
 @onready var flip_random_audio_2d := $FlipRandomAudio2D as RandomAudio2D
 @onready var push_handler := $PushHandler as PushHandler
+@onready var hitbox := $Hitbox as Hitbox
 
 
 func _ready() -> void:
 	ready_timer = get_tree().create_timer(0.1)
+	hitbox.hit.connect(_on_hit)
+	
+	if start_inverted:
+		invert_gravity(false)
 
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		update_animation(Vector2.ZERO, false)
+		return
+	
 	var movement_vector := get_movement_vector()
 	was_grounded_last_frame = is_on_floor()
 	
@@ -61,7 +72,7 @@ func _physics_process(delta: float) -> void:
 	
 	update_animation(movement_vector, just_landed)
 	if is_flipping:
-		is_flipping = !just_landed
+		is_flipping = !is_on_floor()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -78,18 +89,24 @@ func get_movement_vector() -> Vector2:
 	return movement_vector
 
 
-func invert_gravity() -> void:
+func invert_gravity(play_sfx := true) -> void:
 	($Pivot as Node2D).scale.y *= -1
 	gravity *= -1
 	up_direction *= -1
 	
 	is_flipping = true
 	body_collision_shape_2d.position.y += -2 if is_flipped else 2
-	flip_random_audio_2d.play_at_index(is_flipped)
+	if play_sfx:
+		flip_random_audio_2d.play_at_index(is_flipped)
 	animation_player.play("flip")
 
 
 func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
+	if is_dead:
+		if not animation_player.is_playing():
+			animation_player.play("death")
+		return
+	
 	var move_sign := signf(movement_vector.x)
 	if move_sign != 0:
 		visuals.scale = Vector2(move_sign, visuals.scale.y)
@@ -111,5 +128,9 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 		animation_player.play("run")
 	else:
 		animation_player.play("idle")
+
+
+func _on_hit() -> void:
+	is_dead = true
 
 

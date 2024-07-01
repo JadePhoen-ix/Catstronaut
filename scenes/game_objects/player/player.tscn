@@ -404,9 +404,52 @@ tracks/4/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_rpwv5"]
+resource_name = "death"
+length = 0.2
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Visuals/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Visuals/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Visuals/AnimatedSprite2D:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0872665, -0.0872665, 0.0872665]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqmr2"]
 _data = {
 "RESET": SubResource("Animation_5bt03"),
+"death": SubResource("Animation_rpwv5"),
 "fall": SubResource("Animation_qr2kt"),
 "flip": SubResource("Animation_wtak5"),
 "idle": SubResource("Animation_nbjqd"),
@@ -490,10 +533,6 @@ _data = {
 "land": SubResource("Animation_qwa2m")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0b8p"]
-atlas = ExtResource("3_53q1s")
-region = Rect2(0, 128, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5udv"]
 atlas = ExtResource("3_53q1s")
 region = Rect2(32, 128, 32, 32)
@@ -549,9 +588,6 @@ region = Rect2(96, 32, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_jayfc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u0b8p")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h5udv")
 }, {
@@ -617,13 +653,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xft"]
-size = Vector2(32, 30)
+size = Vector2(20, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycgp8"]
 size = Vector2(36, 34)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kawqb"]
-size = Vector2(22, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eq4nf"]
+radius = 11.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 256
@@ -664,7 +700,6 @@ sprite_frames = SubResource("SpriteFrames_jayfc")
 offset = Vector2(0, -16)
 
 [node name="Hitbox" parent="." instance=ExtResource("4_ghnvb")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -15)
@@ -679,7 +714,7 @@ shape = SubResource("RectangleShape2D_ycgp8")
 
 [node name="BodyCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
-shape = SubResource("RectangleShape2D_kawqb")
+shape = SubResource("CapsuleShape2D_eq4nf")
 
 [node name="WalkRandomAudio2D" parent="." instance=ExtResource("5_exhn1")]
 streams = Array[AudioStream]([ExtResource("6_bn4yy"), ExtResource("7_4232y"), ExtResource("8_yhar8"), ExtResource("9_fljuy"), ExtResource("10_o8t7k"), ExtResource("11_5pu46"), ExtResource("12_kfxye"), ExtResource("13_6uok7"), ExtResource("14_cgkxg"), ExtResource("15_8qofs"), ExtResource("16_4tvn8"), ExtResource("17_o1lcc"), ExtResource("18_16tvk"), ExtResource("19_q6kmx")])
