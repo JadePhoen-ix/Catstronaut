@@ -13,10 +13,16 @@ func transition() -> void:
 	animation_player.play_backwards("default")
 
 
-func transition_to_scene(scene_path: String) -> void:
+func transition_to_scene(scene: Variant) -> void:
 	transition()
 	await transitioned_halfway
 	get_tree().paused = false
-	get_tree().change_scene_to_file(scene_path)
+	
+	if scene is String:
+		get_tree().change_scene_to_file(scene)
+	elif scene is PackedScene:
+		get_tree().change_scene_to_packed(scene)
+	else:
+		printerr("Invalid param type for transition: Must be of type String or PackedScene.")
 
 

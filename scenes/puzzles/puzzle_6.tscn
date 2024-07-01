@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4c1pg62qxw11"]
+[gd_scene load_steps=13 format=3 uid="uid://4c1pg62qxw11"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_0olqu"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_pa4jc"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="7_qvhhc"]
 [ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/interactables/button/button.tscn" id="8_7xegn"]
 [ext_resource type="PackedScene" uid="uid://dwppk0ut3vxxd" path="res://scenes/game_objects/interactables/switch/switch.tscn" id="8_gtwwa"]
+[ext_resource type="PackedScene" uid="uid://7ibokh76y4td" path="res://scenes/game_objects/interactables/transition_trigger_box/transition_trigger_box.tscn" id="10_djt0l"]
+[ext_resource type="PackedScene" uid="uid://c120l8o4kncu2" path="res://scenes/ui/main_menu/main_menu.tscn" id="11_b14cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g7cw"]
+size = Vector2(32, 96)
 
 [node name="Node" type="Node"]
 
@@ -118,3 +123,10 @@ limit_top = -184
 limit_right = 320
 limit_bottom = 0
 pan_speed = 0.0
+
+[node name="TransitionTriggerBox" parent="." instance=ExtResource("10_djt0l")]
+position = Vector2(320, 48)
+next_scene = ExtResource("11_b14cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionTriggerBox"]
+shape = SubResource("RectangleShape2D_5g7cw")

@@ -21,4 +21,3 @@ func trigger_connected() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	trigger_connected()
-

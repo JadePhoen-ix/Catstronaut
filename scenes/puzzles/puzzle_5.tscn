@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgqnon4x61ykl"]
+[gd_scene load_steps=15 format=3 uid="uid://dgqnon4x61ykl"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_unu0q"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_8c06r"]
@@ -10,8 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="7_j1cog"]
 [ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/interactables/button/button.tscn" id="8_disss"]
 [ext_resource type="PackedScene" uid="uid://bahyko7utxlpo" path="res://scenes/game_objects/interactables/trigger_box/trigger_box.tscn" id="9_p6mkt"]
+[ext_resource type="PackedScene" uid="uid://7ibokh76y4td" path="res://scenes/game_objects/interactables/transition_trigger_box/transition_trigger_box.tscn" id="11_b45ci"]
+[ext_resource type="PackedScene" uid="uid://4c1pg62qxw11" path="res://scenes/puzzles/puzzle_6.tscn" id="12_bdd17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l0vv"]
+size = Vector2(96, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rovu3"]
 size = Vector2(96, 32)
 
 [node name="Node" type="Node"]
@@ -82,9 +87,8 @@ connected_interactables = [NodePath("../StartDoor")]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBox"]
 shape = SubResource("RectangleShape2D_6l0vv")
 
-[node name="TriggerBox2" parent="." node_paths=PackedStringArray("connected_interactables") instance=ExtResource("9_p6mkt")]
+[node name="TriggerBox2" parent="." instance=ExtResource("9_p6mkt")]
 position = Vector2(-176, 144)
-connected_interactables = [NodePath("../ExitDoor")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerBox2"]
 shape = SubResource("RectangleShape2D_6l0vv")
@@ -92,3 +96,10 @@ shape = SubResource("RectangleShape2D_6l0vv")
 [node name="GameCamera" parent="." instance=ExtResource("7_8b1pa")]
 position_smoothing_speed = 100.0
 pan_speed = 0.0
+
+[node name="TransitionTriggerBox" parent="." instance=ExtResource("11_b45ci")]
+position = Vector2(-176, 176)
+next_scene = ExtResource("12_bdd17")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionTriggerBox"]
+shape = SubResource("RectangleShape2D_rovu3")
