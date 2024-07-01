@@ -30,6 +30,13 @@ func _physics_process(delta: float) -> void:
 	velocity.y = 0.0
 	
 	move_and_slide()
+	
+	var player_detection := $PlayerDetection as Area2D
+	if player_detection.has_overlapping_bodies():
+		velocity = Vector2.ZERO
+	
+	$PushHandler.push_objects(self, up_direction.x)
+	
 
 
 func invert_gravity() -> void:
