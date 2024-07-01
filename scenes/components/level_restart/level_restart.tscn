@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8p1no4gtgu55"]
+
+[ext_resource type="Script" path="res://scenes/components/level_restart/level_restart.gd" id="1_qkgjo"]
+
+[node name="LevelRestart" type="Node"]
+script = ExtResource("1_qkgjo")

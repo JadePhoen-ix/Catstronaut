@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxc4wwb0pjlit"]
+[gd_scene load_steps=13 format=3 uid="uid://dxc4wwb0pjlit"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_rervh"]
+[ext_resource type="PackedScene" uid="uid://b8p1no4gtgu55" path="res://scenes/components/level_restart/level_restart.tscn" id="1_rxbwy"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_gtycl"]
 [ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_hnwbs"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_r3b0x"]
@@ -15,6 +16,8 @@
 size = Vector2(32, 96)
 
 [node name="Node" type="Node"]
+
+[node name="LevelRestart" parent="." instance=ExtResource("1_rxbwy")]
 
 [node name="Vignette" parent="." instance=ExtResource("1_rervh")]
 
