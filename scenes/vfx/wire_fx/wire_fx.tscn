@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b74hhqxh2rcn"]
+[gd_scene load_steps=10 format=3 uid="uid://b74hhqxh2rcn"]
 
 [ext_resource type="Script" path="res://scenes/vfx/wire_fx/wire_fx.gd" id="1_c3cmd"]
+[ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="2_efkir"]
 
 [sub_resource type="Gradient" id="Gradient_n8due"]
 offsets = PackedFloat32Array(0.375, 1)
@@ -55,3 +56,5 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.86
 script = ExtResource("1_c3cmd")
+
+[node name="SparkRandomAudio2D" parent="." instance=ExtResource("2_efkir")]
