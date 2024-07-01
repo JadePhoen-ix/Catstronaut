@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var start_inverted := false
+@export var start_facing_left := false
 @export_range(0.0, 1000.0, 5.0) var jump_speed := 335.0
 @export_range(10.0, 3000.0, 10.0) var gravity := 960.0
 
@@ -38,6 +39,9 @@ func _ready() -> void:
 	
 	if start_inverted:
 		invert_gravity(false)
+	
+	if start_facing_left:
+		visuals.scale = Vector2(-1, visuals.scale.y)
 
 
 func _physics_process(delta: float) -> void:
