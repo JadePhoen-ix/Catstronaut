@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsqnqvjskivvv"]
+[gd_scene load_steps=13 format=3 uid="uid://dsqnqvjskivvv"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_algye"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_7rwqp"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="5_o5el4"]
 [ext_resource type="PackedScene" uid="uid://bsplg5iyw7yxs" path="res://scenes/game_objects/physics/pushable_box/pushable_box.tscn" id="5_rtbi7"]
 [ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="6_du078"]
+[ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="6_xtfao"]
+[ext_resource type="AudioStream" uid="uid://c50pyxs8nj2fy" path="res://assets/audio/environment/metal_box_slide_1.wav" id="7_7i3rr"]
 [ext_resource type="PackedScene" uid="uid://7ibokh76y4td" path="res://scenes/game_objects/interactables/transition_trigger_box/transition_trigger_box.tscn" id="8_hy3tg"]
 [ext_resource type="PackedScene" uid="uid://capu1bc2a5hek" path="res://scenes/puzzles/puzzle_3.tscn" id="9_frbqr"]
 
@@ -38,6 +40,9 @@ position = Vector2(-192, 96)
 
 [node name="PushableBox" parent="EntityLayer" instance=ExtResource("5_rtbi7")]
 position = Vector2(96, 64)
+
+[node name="RandomAudio2D" parent="EntityLayer/PushableBox" instance=ExtResource("6_xtfao")]
+stream = ExtResource("7_7i3rr")
 
 [node name="Door" parent="." instance=ExtResource("6_du078")]
 position = Vector2(-240, 96)

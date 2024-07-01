@@ -26,10 +26,10 @@
 [ext_resource type="AudioStream" uid="uid://dhnwkwogryth2" path="res://assets/audio/gameplay/Reverse_Gravity_Normal-Inverted.wav" id="21_1fg7h"]
 [ext_resource type="AudioStream" uid="uid://bbefgexek8qhj" path="res://assets/audio/cat/cat_jump_1.wav" id="22_jaqe3"]
 [ext_resource type="AudioStream" uid="uid://bg7nicyn1ves7" path="res://assets/audio/cat/cat_jump_2.wav" id="23_fr1v4"]
-[ext_resource type="AudioStream" uid="uid://c1fvewmyvkalr" path="res://assets/audio/cat/cat_fall_impact_1.wav" id="27_pryv2"]
-[ext_resource type="AudioStream" uid="uid://fbqwji2cw774" path="res://assets/audio/cat/cat_fall_impact_2.wav" id="28_cx1u2"]
-[ext_resource type="AudioStream" uid="uid://bjx1y7cjrpdxi" path="res://assets/audio/cat/cat_fall_impact_3.wav" id="29_4gm7g"]
-[ext_resource type="AudioStream" uid="uid://d27cy2p8cqi03" path="res://assets/audio/cat/cat_fall_impact_4.wav" id="30_xyku2"]
+[ext_resource type="AudioStream" uid="uid://cwv3whcb3k0b2" path="res://assets/audio/cat/cat_fall_impact_1.wav" id="27_pryv2"]
+[ext_resource type="AudioStream" uid="uid://djh7c22l3brcb" path="res://assets/audio/cat/cat_fall_impact_2.wav" id="28_cx1u2"]
+[ext_resource type="AudioStream" uid="uid://ck5dw2gqspt8n" path="res://assets/audio/cat/cat_fall_impact_3.wav" id="29_4gm7g"]
+[ext_resource type="AudioStream" uid="uid://bry3fhwovuaoy" path="res://assets/audio/cat/cat_fall_impact_4.wav" id="30_xyku2"]
 
 [sub_resource type="Animation" id="Animation_5bt03"]
 length = 0.001
@@ -105,6 +105,48 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rpwv5"]
+resource_name = "death"
+length = 0.2
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Visuals/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Visuals/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Visuals/AnimatedSprite2D:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0872665, -0.0872665, 0.0872665]
 }
 
 [sub_resource type="Animation" id="Animation_qr2kt"]
@@ -402,48 +444,6 @@ tracks/4/keys = {
 "args": [],
 "method": &"play_random"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_rpwv5"]
-resource_name = "death"
-length = 0.2
-loop_mode = 1
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Visuals/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"death"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Visuals/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Pivot/Visuals/AnimatedSprite2D:rotation")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0872665, -0.0872665, 0.0872665]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqmr2"]
