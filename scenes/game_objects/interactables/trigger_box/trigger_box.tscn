@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bahyko7utxlpo"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/interactables/trigger_box/trigger_box.gd" id="1_uj5eg"]
+
+[node name="TriggerBox" type="Area2D"]
+collision_layer = 0
+collision_mask = 256
+script = ExtResource("1_uj5eg")
