@@ -43,4 +43,5 @@ rotation = 1.57079
 start_open = true
 
 [node name="GameCamera" parent="." instance=ExtResource("5_o5el4")]
+position = Vector2(0, -16)
 pan_speed = 0.0
