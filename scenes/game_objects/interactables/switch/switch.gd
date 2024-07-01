@@ -26,6 +26,8 @@ func _interaction() -> void:
 
 func trigger_connected() -> void:
 	for interactable in connected_interactables:
+		if interactable == null:
+			continue
 		interactable.trigger_interactable()
 
 

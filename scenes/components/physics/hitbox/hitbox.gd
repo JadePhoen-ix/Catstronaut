@@ -1,5 +1,5 @@
 extends Area2D
-class_name HitboxComponent
+class_name Hitbox
 
 
 signal hit()
@@ -10,5 +10,4 @@ func _ready() -> void:
 
 
 func _on_body_entered(other_body: Node2D) -> void:
-	print("hit detected")
 	hit.emit()
