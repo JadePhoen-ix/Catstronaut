@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://1xm0q15o8xj5"]
+
+[ext_resource type="Texture2D" uid="uid://bqjtpkef22qe3" path="res://scenes/environment/sign/sign.png" id="1_hwdv4"]
+
+[node name="Sign" type="Sprite2D"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_hwdv4")

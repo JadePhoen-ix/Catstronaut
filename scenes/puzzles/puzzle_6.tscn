@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://4c1pg62qxw11"]
+[gd_scene load_steps=14 format=3 uid="uid://4c1pg62qxw11"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_0olqu"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_pa4jc"]
 [ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_qwoyr"]
+[ext_resource type="PackedScene" uid="uid://1xm0q15o8xj5" path="res://scenes/environment/sign/sign.tscn" id="4_0kexq"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_i22yk"]
 [ext_resource type="PackedScene" uid="uid://g4gevty26jys" path="res://scenes/game_objects/physics/sideways_gravity_box/sideways_gravity_box.tscn" id="5_l5p60"]
 [ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="6_c4lfc"]
@@ -34,6 +35,9 @@ layer_1/z_index = 2
 layer_1/tile_data = PackedInt32Array(262152, 65537, 5, 262151, 65537, 5, 196615, 65537, 3, 262150, 65537, 5, 196614, 65537, 3, 262149, 65537, 5, 196613, 65537, 3, 262148, 65537, 5, 196612, 65537, 3, 262147, 65537, 5, 196611, 65537, 3, 262146, 65537, 5, 196610, 65537, 3, 262145, 65537, 5, 196609, 65537, 3, 262144, 65537, 5, 196608, 65537, 3, 327679, 65537, 5, 262143, 65537, 3, 327678, 65537, 5, 262142, 65537, 3, 327677, 65537, 5, 262141, 65537, 3, 327676, 65537, 5, 262140, 65537, 3, 327675, 65537, 5, 262139, 65537, 3, 327674, 65537, 5, 262138, 65537, 3, 327673, 65537, 5, 262137, 65537, 3, 327672, 65537, 5, 262136, 65537, 3, 327671, 65537, 5, 262135, 65537, 3, -196608, 131073, 3, -131073, 1, 3, -65536, 65537, 5, -1, 65537, 5, -196599, 1, 3, -131082, 131073, 3, -10, 65537, 5, -65527, 65537, 5, -2, 65537, 7, -3, 65537, 7, -4, 65537, 7, -5, 65537, 7, -6, 65537, 7, -7, 65537, 7, -8, 65537, 7, -9, 65537, 7, -65528, 65537, 7, -65529, 65537, 7, -65530, 65537, 7, -65531, 65537, 7, -65532, 65537, 7, -65533, 65537, 7, -65534, 65537, 7, -65535, 65537, 7, 327670, 65537, 5, 262134, 65537, 3, 327669, 1, 5, 262133, 1, 3, -11, 1, 5, -131083, 1, 3, 262154, 131073, 5, 196618, 131073, 3, -65526, 131073, 5, -196598, 131073, 3, 196617, 65537, 3, 262153, 65537, 5, 196616, 65537, 3, -131072, 131073, 4, -65537, 1, 4, -65546, 131073, 4, -65547, 1, 4, -131062, 131073, 4, -131063, 1, 4)
 layer_2/name = "VFX"
 layer_2/tile_data = PackedInt32Array()
+
+[node name="Sign" parent="." instance=ExtResource("4_0kexq")]
+position = Vector2(224, 48)
 
 [node name="EntityLayer" type="Node2D" parent="."]
 

@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsqnqvjskivvv"]
+[gd_scene load_steps=12 format=3 uid="uid://dsqnqvjskivvv"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_algye"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_7rwqp"]
 [ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_huoh8"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_gx6ta"]
+[ext_resource type="PackedScene" uid="uid://1xm0q15o8xj5" path="res://scenes/environment/sign/sign.tscn" id="4_paoao"]
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="5_o5el4"]
 [ext_resource type="PackedScene" uid="uid://bsplg5iyw7yxs" path="res://scenes/game_objects/physics/pushable_box/pushable_box.tscn" id="5_rtbi7"]
 [ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="6_du078"]
-[ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="6_xtfao"]
-[ext_resource type="AudioStream" uid="uid://c50pyxs8nj2fy" path="res://assets/audio/environment/metal_box_slide_1.wav" id="7_7i3rr"]
 [ext_resource type="PackedScene" uid="uid://7ibokh76y4td" path="res://scenes/game_objects/interactables/transition_trigger_box/transition_trigger_box.tscn" id="8_hy3tg"]
 [ext_resource type="PackedScene" uid="uid://capu1bc2a5hek" path="res://scenes/puzzles/puzzle_3.tscn" id="9_frbqr"]
 
@@ -33,6 +32,10 @@ layer_1/tile_data = PackedInt32Array(262152, 131073, 5, 196616, 131073, 4, 26215
 layer_2/name = "VFX"
 layer_2/tile_data = PackedInt32Array(-196612, 0, 65536, -196611, 0, 65536, -196610, 0, 65536, -196609, 0, 65536, -262144, 0, 65536, -262143, 0, 65536, -262142, 0, 65536, -262141, 0, 65536, -262140, 0, 65536, -262139, 0, 65536, -262138, 0, 65536)
 
+[node name="Sign" parent="TileMap" instance=ExtResource("4_paoao")]
+position = Vector2(-176, -96)
+rotation = -1.57079
+
 [node name="EntityLayer" type="Node2D" parent="."]
 
 [node name="Player" parent="EntityLayer" instance=ExtResource("4_gx6ta")]
@@ -40,9 +43,6 @@ position = Vector2(-192, 96)
 
 [node name="PushableBox" parent="EntityLayer" instance=ExtResource("5_rtbi7")]
 position = Vector2(96, 64)
-
-[node name="RandomAudio2D" parent="EntityLayer/PushableBox" instance=ExtResource("6_xtfao")]
-stream = ExtResource("7_7i3rr")
 
 [node name="Door" parent="." instance=ExtResource("6_du078")]
 position = Vector2(-240, 96)
