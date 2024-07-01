@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://4c1pg62qxw11"]
+
+[ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_0olqu"]
+[ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_pa4jc"]
+[ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_qwoyr"]
+[ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_i22yk"]
+[ext_resource type="PackedScene" uid="uid://g4gevty26jys" path="res://scenes/game_objects/physics/sideways_gravity_box/sideways_gravity_box.tscn" id="5_l5p60"]
+[ext_resource type="PackedScene" uid="uid://brfcg0vda40ch" path="res://scenes/game_objects/interactables/door/door.tscn" id="6_c4lfc"]
+[ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="7_qvhhc"]
+[ext_resource type="PackedScene" uid="uid://nxjat54qepdn" path="res://scenes/game_objects/interactables/button/button.tscn" id="8_7xegn"]
+[ext_resource type="PackedScene" uid="uid://dwppk0ut3vxxd" path="res://scenes/game_objects/interactables/switch/switch.tscn" id="8_gtwwa"]
+
+[node name="Node" type="Node"]
+
+[node name="Vignette" parent="." instance=ExtResource("1_0olqu")]
+
+[node name="SpaceBackdrop" parent="." instance=ExtResource("2_pa4jc")]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_qwoyr")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -2
+layer_0/tile_data = PackedInt32Array(196617, 327681, 2, 131081, 196609, 1, 65545, 327681, 1, 9, 327681, 1, -65527, 196609, 0, 196616, 262145, 0, 131080, 327681, 1, 65544, 327681, 1, 8, 327681, 1, -65528, 262145, 0, 196615, 196609, 1, 131079, 196609, 1, 65543, 327681, 1, 7, 196609, 1, -65529, 262145, 0, 196614, 196609, 1, 131078, 327681, 1, 65542, 196609, 1, 6, 262145, 0, -65530, 196609, 1, 196613, 196609, 1, 131077, 262145, 0, 65541, 131073, 2, 5, 131073, 0, -65531, 262145, 2, 196612, 196609, 1, 131076, 327681, 1, 65540, 65537, 2, 4, 65537, 0, -65532, 262145, 2, 196611, 262145, 0, 131075, 262145, 0, 65539, 65537, 2, 3, 65537, 0, -65533, 327681, 1, 196610, 262145, 1, 131074, 262145, 0, 65538, 65537, 2, 2, 65537, 0, -65534, 196609, 1, 196609, 196609, 1, 131073, 196609, 1, 65537, 65537, 2, 1, 65537, 0, -65535, 262145, 0, 196608, 196609, 1, 131072, 262145, 0, 0, 65537, 0, -65536, 196609, 1, 262143, 327681, 1, 196607, 262145, 0, 131071, 65537, 2, 65535, 65537, 0, -1, 196609, 1, 262142, 262145, 2, 196606, 327681, 1, 131070, 65537, 2, 65534, 65537, 0, -2, 327681, 1, 262141, 262145, 0, 196605, 196609, 1, 131069, 65537, 2, 65533, 65537, 0, -3, 196609, 1, 262140, 327681, 1, 196604, 327681, 1, 131068, 65537, 2, 65532, 65537, 0, -4, 327681, 1, 262139, 196609, 1, 196603, 196609, 1, 131067, 65537, 2, 65531, 65537, 0, -5, 196609, 1, 262138, 327681, 1, 196602, 327681, 1, 131066, 1, 2, 65530, 1, 0, -6, 262145, 0, 262137, 262145, 1, 196601, 262145, 0, 131065, 196609, 1, 65529, 196609, 1, -7, 196609, 1, 262136, 262145, 2, 196600, 196609, 1, 131064, 327681, 1, 65528, 196609, 1, -8, 262145, 0, 262135, 327681, 1, 196599, 262145, 1, 131063, 327681, 1, 65527, 262145, 0, -9, 262145, 0, 262134, 262145, 0, 196598, 327681, 1, 131062, 196609, 1, 65526, 327681, 1, -10, 262145, 0, 65536, 65537, 2, -65539, 196609, 1, -131075, 327681, 1, -196611, 327681, 1, -65540, 196609, 1, -131076, 196609, 1, -196612, 196609, 1, -65541, 262145, 0, -131077, 327681, 1, -196613, 327681, 1, -65542, 327681, 1, -131078, 327681, 1, -196614, 327681, 1, -65543, 196609, 1, -131079, 327681, 1, -196615, 196609, 1, -65544, 196609, 1, -131080, 196609, 1, -196616, 196609, 2, -131065, 196609, 1, -196601, 327681, 1, -262137, 327681, 1, -131066, 262145, 0, -196602, 327681, 1, -262138, 262145, 0, -131067, 196609, 1, -196603, 196609, 1, -262139, 262145, 0, -131068, 262145, 0, -196604, 196609, 1, -262140, 262145, 0, -131069, 196609, 1, -196605, 196609, 1, -262141, 262145, 0, -131070, 196609, 1, -196606, 327681, 1, -262142, 196609, 2, -131064, 262145, 0, -196600, 262145, 0, -131071, 262145, 0, -196607, 196609, 1, -131072, 327681, 1, -196608, 262145, 0, -65537, 327681, 1, -131073, 262145, 0, -65538, 196609, 1, -131074, 196609, 1, -65545, 262145, 0, -131081, 262145, 0)
+layer_1/name = "Foreground"
+layer_1/z_index = 2
+layer_1/tile_data = PackedInt32Array(262152, 65537, 5, 262151, 65537, 5, 196615, 65537, 3, 262150, 65537, 5, 196614, 65537, 3, 262149, 65537, 5, 196613, 65537, 3, 262148, 65537, 5, 196612, 65537, 3, 262147, 65537, 5, 196611, 65537, 3, 262146, 65537, 5, 196610, 65537, 3, 262145, 65537, 5, 196609, 65537, 3, 262144, 65537, 5, 196608, 65537, 3, 327679, 65537, 5, 262143, 65537, 3, 327678, 65537, 5, 262142, 65537, 3, 327677, 65537, 5, 262141, 65537, 3, 327676, 65537, 5, 262140, 65537, 3, 327675, 65537, 5, 262139, 65537, 3, 327674, 65537, 5, 262138, 65537, 3, 327673, 65537, 5, 262137, 65537, 3, 327672, 65537, 5, 262136, 65537, 3, 327671, 65537, 5, 262135, 65537, 3, -196608, 131073, 3, -131073, 1, 3, -65536, 65537, 5, -1, 65537, 5, -196599, 1, 3, -131082, 131073, 3, -10, 65537, 5, -65527, 65537, 5, -2, 65537, 7, -3, 65537, 7, -4, 65537, 7, -5, 65537, 7, -6, 65537, 7, -7, 65537, 7, -8, 65537, 7, -9, 65537, 7, -65528, 65537, 7, -65529, 65537, 7, -65530, 65537, 7, -65531, 65537, 7, -65532, 65537, 7, -65533, 65537, 7, -65534, 65537, 7, -65535, 65537, 7, 327670, 65537, 5, 262134, 65537, 3, 327669, 1, 5, 262133, 1, 3, -11, 1, 5, -131083, 1, 3, 262154, 131073, 5, 196618, 131073, 3, -65526, 131073, 5, -196598, 131073, 3, 196617, 65537, 3, 262153, 65537, 5, 196616, 65537, 3, -131072, 131073, 4, -65537, 1, 4, -65546, 131073, 4, -65547, 1, 4, -131062, 131073, 4, -131063, 1, 4)
+layer_2/name = "VFX"
+layer_2/tile_data = PackedInt32Array()
+
+[node name="EntityLayer" type="Node2D" parent="."]
+
+[node name="Player" parent="EntityLayer" instance=ExtResource("4_i22yk")]
+position = Vector2(-208, 96)
+
+[node name="SidewaysGravityBox" parent="EntityLayer" instance=ExtResource("5_l5p60")]
+position = Vector2(-272, -48)
+
+[node name="SidewaysGravityBox2" parent="EntityLayer" instance=ExtResource("5_l5p60")]
+position = Vector2(272, -48)
+start_inverted = true
+
+[node name="LeftDoors" type="Node2D" parent="."]
+position = Vector2(-240, -32)
+
+[node name="Door1" parent="LeftDoors" instance=ExtResource("6_c4lfc")]
+
+[node name="Door2" parent="LeftDoors" instance=ExtResource("6_c4lfc")]
+position = Vector2(52, 0)
+
+[node name="Door3" parent="LeftDoors" instance=ExtResource("6_c4lfc")]
+position = Vector2(104, 0)
+
+[node name="Final4" parent="LeftDoors" instance=ExtResource("6_c4lfc")]
+position = Vector2(156, 0)
+
+[node name="Button" parent="LeftDoors" node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_7xegn")]
+position = Vector2(208, -32)
+rotation = -1.57079
+connected_interactables = [NodePath("../../EndDoor")]
+
+[node name="LeftDoors2" type="Node2D" parent="."]
+position = Vector2(240, -32)
+scale = Vector2(-1, 1)
+
+[node name="Door8" parent="LeftDoors2" instance=ExtResource("6_c4lfc")]
+
+[node name="Door7" parent="LeftDoors2" instance=ExtResource("6_c4lfc")]
+position = Vector2(52, 0)
+
+[node name="Door6" parent="LeftDoors2" instance=ExtResource("6_c4lfc")]
+position = Vector2(104, 0)
+
+[node name="Final5" parent="LeftDoors2" instance=ExtResource("6_c4lfc")]
+position = Vector2(156, 0)
+
+[node name="Button" parent="LeftDoors2" node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_7xegn")]
+position = Vector2(208, -32)
+rotation = -1.57079
+connected_interactables = [NodePath("../../LockEndDoor")]
+
+[node name="Switch1" parent="." node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_gtwwa")]
+position = Vector2(-160, 96)
+connected_interactables = [NodePath("../LeftDoors/Door1"), NodePath("../LeftDoors2/Door7"), NodePath("../LeftDoors2/Door6"), NodePath("../LeftDoors2/Door8")]
+
+[node name="Switch2" parent="." node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_gtwwa")]
+position = Vector2(-80, 96)
+connected_interactables = [NodePath("../LeftDoors/Door3"), null, null]
+
+[node name="Switch3" parent="." node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_gtwwa")]
+position = Vector2(0, 96)
+connected_interactables = [NodePath("../LeftDoors/Final4"), NodePath("../LeftDoors2/Final5"), null]
+
+[node name="Switch4" parent="." node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_gtwwa")]
+position = Vector2(80, 96)
+connected_interactables = [NodePath("../LeftDoors/Door3"), NodePath("../LeftDoors2/Final5"), null]
+
+[node name="Switch5" parent="." node_paths=PackedStringArray("connected_interactables") instance=ExtResource("8_gtwwa")]
+position = Vector2(160, 96)
+connected_interactables = [NodePath("../LeftDoors/Door2"), NodePath("../LeftDoors/Final4"), NodePath("../LeftDoors2/Door6")]
+
+[node name="StartDoor" parent="." instance=ExtResource("6_c4lfc")]
+position = Vector2(-288, 96)
+
+[node name="EndDoor" parent="." instance=ExtResource("6_c4lfc")]
+position = Vector2(288, 96)
+
+[node name="LockEndDoor" parent="." instance=ExtResource("6_c4lfc")]
+position = Vector2(256, 96)
+start_open = true
+
+[node name="GameCamera" parent="." instance=ExtResource("7_qvhhc")]
+zoom = Vector2(0.8, 0.8)
+limit_left = -320
+limit_top = -184
+limit_right = 320
+limit_bottom = 0
+pan_speed = 0.0
