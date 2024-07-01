@@ -1,7 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b74hhqxh2rcn"]
+[gd_scene load_steps=14 format=3 uid="uid://b74hhqxh2rcn"]
 
 [ext_resource type="Script" path="res://scenes/vfx/wire_fx/wire_fx.gd" id="1_c3cmd"]
 [ext_resource type="PackedScene" uid="uid://bogprwkvw2lg2" path="res://scenes/components/audio/random_audio_2d/random_audio_2d.tscn" id="2_efkir"]
+[ext_resource type="AudioStream" uid="uid://vu08qvvs26a4" path="res://assets/audio/environment/sparks_1.wav" id="3_dvsyy"]
+[ext_resource type="AudioStream" uid="uid://dki3w6asoe52e" path="res://assets/audio/environment/sparks_2.wav" id="4_wcffe"]
+[ext_resource type="AudioStream" uid="uid://b3dr3ka82jaq4" path="res://assets/audio/environment/sparks_3.wav" id="5_u2dqt"]
+[ext_resource type="AudioStream" uid="uid://cvg0fyo41v376" path="res://assets/audio/environment/sparks_4.wav" id="6_4ap4b"]
 
 [sub_resource type="Gradient" id="Gradient_n8due"]
 offsets = PackedFloat32Array(0.375, 1)
@@ -58,3 +62,5 @@ explosiveness = 0.86
 script = ExtResource("1_c3cmd")
 
 [node name="SparkRandomAudio2D" parent="." instance=ExtResource("2_efkir")]
+volume_db = -14.423
+streams = Array[AudioStream]([ExtResource("3_dvsyy"), ExtResource("4_wcffe"), ExtResource("5_u2dqt"), ExtResource("6_4ap4b")])

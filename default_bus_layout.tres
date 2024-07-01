@@ -1,4 +1,12 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://bnkwnsgwel8w8"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://bnkwnsgwel8w8"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_70s70"]
+resource_name = "Reverb"
+room_size = 0.04
+damping = 0.2
+hipass = 0.71
+dry = 0.65
+wet = 0.25
 
 [resource]
 bus/0/volume_db = -0.00162125
@@ -8,6 +16,8 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
 bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_70s70")
+bus/1/effect/0/enabled = true
 bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false
