@@ -103,7 +103,8 @@ func invert_gravity(play_sfx := true) -> void:
 
 func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 	if is_dead:
-		if not animation_player.is_playing():
+		if animation_player.current_animation != "death" or not animation_player.is_playing():
+			land_animation_player.stop()
 			animation_player.play("death")
 		return
 	
