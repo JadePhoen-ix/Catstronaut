@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://ftv4maeumkd7"]
+[gd_scene load_steps=9 format=3 uid="uid://ftv4maeumkd7"]
 
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_1g0iq"]
+[ext_resource type="PackedScene" uid="uid://b8p1no4gtgu55" path="res://scenes/components/level_restart/level_restart.tscn" id="1_calwf"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_odnbn"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="3_io5c6"]
 [ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_mq611"]
+[ext_resource type="PackedScene" uid="uid://1xm0q15o8xj5" path="res://scenes/environment/sign/sign.tscn" id="4_gq3cx"]
 [ext_resource type="PackedScene" uid="uid://bjbkws3osevoi" path="res://scenes/game_objects/game_camera/game_camera.tscn" id="5_rq4qd"]
+[ext_resource type="PackedScene" uid="uid://7ibokh76y4td" path="res://scenes/game_objects/interactables/transition_trigger_box/transition_trigger_box.tscn" id="6_fnxaf"]
 
 [node name="Puzzle" type="Node"]
+
+[node name="LevelRestart" parent="." instance=ExtResource("1_calwf")]
 
 [node name="Vignette" parent="." instance=ExtResource("1_1g0iq")]
 
@@ -23,8 +28,16 @@ layer_1/tile_data = PackedInt32Array()
 layer_2/name = "VFX"
 layer_2/tile_data = PackedInt32Array()
 
+[node name="Sign" parent="." instance=ExtResource("4_gq3cx")]
+
 [node name="EntityLayer" type="Node2D" parent="."]
 
 [node name="Player" parent="EntityLayer" instance=ExtResource("3_io5c6")]
+
+[node name="InteractablesLayer" type="Node2D" parent="."]
+
+[node name="TransitionTriggerBox" parent="." instance=ExtResource("6_fnxaf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionTriggerBox"]
 
 [node name="GameCamera" parent="." instance=ExtResource("5_rq4qd")]
