@@ -3,7 +3,7 @@ extends Camera2D
 
 var target_position := Vector2.ZERO
 
-@export_range(0.0, 100.0, 10.0) var pan_speed := 30.0
+@export_range(0.0, 1000.0, 10.0) var pan_speed := 30.0
 @export var player_offset := Vector2.ZERO
 @export_color_no_alpha var background_color := Color.CORNFLOWER_BLUE
 
