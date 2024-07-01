@@ -104,7 +104,6 @@ func update_animation(movement_vector: Vector2, just_landed: bool) -> void:
 		if animation_player.current_animation != "death" or not animation_player.is_playing():
 			land_animation_player.stop()
 			animation_player.play("death")
-			%DeathRandomAudio2D.play_random()
 			$%ElectrocuteRandomAudio2D.play_random()
 			
 			GameEvents.emit_player_died()

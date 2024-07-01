@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://c4kea8118483s"]
+[gd_scene load_steps=60 format=3 uid="uid://c4kea8118483s"]
 
 [ext_resource type="PackedScene" uid="uid://cs4wbojtiw2qj" path="res://scenes/components/physics/velocity_2d/velocity_2d.tscn" id="1_01q1c"]
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_o0x4b"]
@@ -30,7 +30,6 @@
 [ext_resource type="AudioStream" uid="uid://fbqwji2cw774" path="res://assets/audio/cat/cat_fall_impact_2.wav" id="28_cx1u2"]
 [ext_resource type="AudioStream" uid="uid://bjx1y7cjrpdxi" path="res://assets/audio/cat/cat_fall_impact_3.wav" id="29_4gm7g"]
 [ext_resource type="AudioStream" uid="uid://d27cy2p8cqi03" path="res://assets/audio/cat/cat_fall_impact_4.wav" id="30_xyku2"]
-[ext_resource type="AudioStream" uid="uid://dykwmjf4kgxmn" path="res://assets/audio/cat/cat_die_1.wav" id="31_kfsri"]
 [ext_resource type="AudioStream" uid="uid://bb32wafgon6uu" path="res://assets/audio/environment/electricity_loop.wav" id="31_th0tq"]
 
 [sub_resource type="Animation" id="Animation_5bt03"]
@@ -732,10 +731,6 @@ streams = Array[AudioStream]([ExtResource("22_jaqe3"), ExtResource("23_fr1v4")])
 [node name="LandRandomAudio2D" parent="AudioNodes" instance=ExtResource("5_exhn1")]
 streams = Array[AudioStream]([ExtResource("27_pryv2"), ExtResource("28_cx1u2"), ExtResource("29_4gm7g"), ExtResource("30_xyku2")])
 
-[node name="DeathRandomAudio2D" parent="AudioNodes" instance=ExtResource("5_exhn1")]
-unique_name_in_owner = true
-streams = Array[AudioStream]([ExtResource("31_kfsri")])
-
-[node name="ElectrocuteRandomAudio2D" parent="AudioNodes/DeathRandomAudio2D" instance=ExtResource("5_exhn1")]
+[node name="ElectrocuteRandomAudio2D" parent="AudioNodes" instance=ExtResource("5_exhn1")]
 unique_name_in_owner = true
 streams = Array[AudioStream]([ExtResource("31_th0tq")])
