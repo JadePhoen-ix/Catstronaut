@@ -134,6 +134,10 @@ size = Vector2(7, 6.75)
 [node name="Switch" type="Node2D"]
 script = ExtResource("1_66q1t")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_lk7kd")

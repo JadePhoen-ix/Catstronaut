@@ -13,6 +13,7 @@ var on := false
 
 @onready var lever_sprite := $LeverSprite2D as Sprite2D
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
+@onready var timer := $Timer as Timer
 
 
 func _ready() -> void:
@@ -22,6 +23,10 @@ func _ready() -> void:
 
 
 func _interaction() -> void:
+	if not timer.is_stopped():
+		return
+	timer.start()
+	
 	on = !on
 	if on:
 		animation_player.play("on")
