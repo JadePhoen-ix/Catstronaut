@@ -26,10 +26,10 @@
 [ext_resource type="AudioStream" uid="uid://dhnwkwogryth2" path="res://assets/audio/gameplay/Reverse_Gravity_Normal-Inverted.wav" id="21_1fg7h"]
 [ext_resource type="AudioStream" uid="uid://bbefgexek8qhj" path="res://assets/audio/cat/cat_jump_1.wav" id="22_jaqe3"]
 [ext_resource type="AudioStream" uid="uid://bg7nicyn1ves7" path="res://assets/audio/cat/cat_jump_2.wav" id="23_fr1v4"]
-[ext_resource type="AudioStream" uid="uid://c1fvewmyvkalr" path="res://assets/audio/cat/cat_fall_impact_1.wav" id="27_pryv2"]
-[ext_resource type="AudioStream" uid="uid://fbqwji2cw774" path="res://assets/audio/cat/cat_fall_impact_2.wav" id="28_cx1u2"]
-[ext_resource type="AudioStream" uid="uid://bjx1y7cjrpdxi" path="res://assets/audio/cat/cat_fall_impact_3.wav" id="29_4gm7g"]
-[ext_resource type="AudioStream" uid="uid://d27cy2p8cqi03" path="res://assets/audio/cat/cat_fall_impact_4.wav" id="30_xyku2"]
+[ext_resource type="AudioStream" uid="uid://cwv3whcb3k0b2" path="res://assets/audio/cat/cat_fall_impact_1.wav" id="27_pryv2"]
+[ext_resource type="AudioStream" uid="uid://djh7c22l3brcb" path="res://assets/audio/cat/cat_fall_impact_2.wav" id="28_cx1u2"]
+[ext_resource type="AudioStream" uid="uid://ck5dw2gqspt8n" path="res://assets/audio/cat/cat_fall_impact_3.wav" id="29_4gm7g"]
+[ext_resource type="AudioStream" uid="uid://bry3fhwovuaoy" path="res://assets/audio/cat/cat_fall_impact_4.wav" id="30_xyku2"]
 [ext_resource type="AudioStream" uid="uid://bb32wafgon6uu" path="res://assets/audio/environment/electricity_loop.wav" id="31_th0tq"]
 
 [sub_resource type="Animation" id="Animation_5bt03"]
@@ -727,6 +727,7 @@ unique_name_in_owner = true
 streams = Array[AudioStream]([ExtResource("20_6mddm"), ExtResource("21_1fg7h")])
 
 [node name="JumpRandomAudio2D" parent="AudioNodes" instance=ExtResource("5_exhn1")]
+volume_db = 3.037
 streams = Array[AudioStream]([ExtResource("22_jaqe3"), ExtResource("23_fr1v4")])
 
 [node name="LandRandomAudio2D" parent="AudioNodes" instance=ExtResource("5_exhn1")]
