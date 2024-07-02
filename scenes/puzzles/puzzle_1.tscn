@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxc4wwb0pjlit"]
+[gd_scene load_steps=15 format=3 uid="uid://dxc4wwb0pjlit"]
 
+[ext_resource type="PackedScene" uid="uid://dov72o1xpo1ow" path="res://scenes/components/audio/music_setter/music_setter.tscn" id="1_amrxi"]
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="1_rervh"]
 [ext_resource type="PackedScene" uid="uid://b8p1no4gtgu55" path="res://scenes/components/level_restart/level_restart.tscn" id="1_rxbwy"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_gtycl"]
+[ext_resource type="AudioStream" uid="uid://bgdrautogrumj" path="res://assets/audio/music/gameplay_loop.mp3" id="2_osvlq"]
 [ext_resource type="TileSet" uid="uid://bu40uktaq3g2g" path="res://resources/puzzle_tile_set.tres" id="3_hnwbs"]
 [ext_resource type="PackedScene" uid="uid://c4kea8118483s" path="res://scenes/game_objects/player/player.tscn" id="4_r3b0x"]
 [ext_resource type="PackedScene" uid="uid://1xm0q15o8xj5" path="res://scenes/environment/sign/sign.tscn" id="4_ssrbj"]
@@ -16,6 +18,9 @@
 size = Vector2(32, 96)
 
 [node name="Node" type="Node"]
+
+[node name="MusicSetter" parent="." instance=ExtResource("1_amrxi")]
+music_stream = ExtResource("2_osvlq")
 
 [node name="LevelRestart" parent="." instance=ExtResource("1_rxbwy")]
 

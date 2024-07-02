@@ -7,7 +7,3 @@ process_mode = 3
 autoplay = true
 bus = &"Music"
 script = ExtResource("2_ey5tt")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
-one_shot = true

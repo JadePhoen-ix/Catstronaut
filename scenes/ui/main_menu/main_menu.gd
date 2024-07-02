@@ -3,7 +3,7 @@ extends CanvasLayer
 
 const MAIN_SCENE_PATH := "res://scenes/puzzles/puzzle_1.tscn"
 const OPTIONS_MENU_SCENE := preload("res://scenes/ui/options_menu/options_menu.tscn")
-const MAIN_MENU_SONG := preload("res://assets/audio/music/main_menu.wav")
+const MAIN_MENU_SONG := preload("res://assets/audio/music/main_menu_loop.mp3")
 
 var camera_offset := Vector2.ZERO
 
@@ -16,8 +16,6 @@ var camera_offset := Vector2.ZERO
 func _ready() -> void:
 	play_button.pressed.connect(_on_play_pressed)
 	options_button.pressed.connect(_on_options_pressed)
-	
-	MusicPlayer.set_music(MAIN_MENU_SONG)
 
 
 func _process(delta: float) -> void:

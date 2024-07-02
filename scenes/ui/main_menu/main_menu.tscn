@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c120l8o4kncu2"]
+[gd_scene load_steps=18 format=3 uid="uid://c120l8o4kncu2"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1dyl1"]
 [ext_resource type="PackedScene" uid="uid://dwnwju7rvg8qi" path="res://scenes/ui/audio_button/audio_button.tscn" id="1_g6dok"]
 [ext_resource type="PackedScene" uid="uid://bkdmenm1ry2hm" path="res://scenes/environment/space_backdrop/space_backdrop.tscn" id="2_drws3"]
+[ext_resource type="PackedScene" uid="uid://dov72o1xpo1ow" path="res://scenes/components/audio/music_setter/music_setter.tscn" id="2_pm7v2"]
+[ext_resource type="AudioStream" uid="uid://cuks5vuq0yjs5" path="res://assets/audio/music/main_menu_loop.mp3" id="3_7kwe4"]
 [ext_resource type="PackedScene" uid="uid://c7aoc4ktknfq6" path="res://scenes/ui/vignette/vignette.tscn" id="3_l6rp7"]
 [ext_resource type="Texture2D" uid="uid://cygcdnnb063c6" path="res://scenes/game_objects/player/player.png" id="5_sellq"]
 [ext_resource type="Texture2D" uid="uid://gpjfrgqm7f1x" path="res://scenes/ui/main_menu/earth.png" id="6_v1o52"]
@@ -98,7 +100,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Planet:rotation")
+tracks/0/path = NodePath("MenuContainer/Planet:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,7 +117,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Planet:rotation")
+tracks/0/path = NodePath("MenuContainer/Planet:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -156,13 +158,16 @@ animations = [{
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_1dyl1")
 
+[node name="MusicSetter" parent="." instance=ExtResource("2_pm7v2")]
+music_stream = ExtResource("3_7kwe4")
+
 [node name="Vignette" parent="." instance=ExtResource("3_l6rp7")]
 
 [node name="SpaceBackdrop" parent="." instance=ExtResource("2_drws3")]
 scroll_offset = Vector2(20, 0)
 
 [node name="CatAnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Cat/AnimatedSprite2D")
+root_node = NodePath("../MenuContainer/Cat/AnimatedSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_vpcgc")
 }
@@ -234,14 +239,14 @@ focus_next = NodePath("../PlayButton")
 focus_previous = NodePath("../PlayButton")
 text = "options"
 
-[node name="Cat" type="Node2D" parent="."]
+[node name="Cat" type="Node2D" parent="MenuContainer"]
 position = Vector2(242, 140)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MenuContainer/Cat"]
 sprite_frames = SubResource("SpriteFrames_xbelc")
 offset = Vector2(0, -16)
 
-[node name="Planet" type="Sprite2D" parent="."]
+[node name="Planet" type="Sprite2D" parent="MenuContainer"]
 z_index = -3
 position = Vector2(239, 192)
 texture = ExtResource("6_v1o52")

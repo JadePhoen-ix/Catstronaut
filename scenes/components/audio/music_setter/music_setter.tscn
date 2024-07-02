@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dov72o1xpo1ow"]
+
+[ext_resource type="Script" path="res://scenes/components/audio/music_setter/music_setter.gd" id="1_nvlwr"]
+
+[node name="MusicSetter" type="Node"]
+script = ExtResource("1_nvlwr")
